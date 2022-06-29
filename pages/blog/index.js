@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function TestPage({ allContent }) {
   return (
-    <Layout seoTitle="Blog | Andrew R. Porter">
+    <Layout seoTitle="Blog | Andrew Porter">
       {allContent.map((content) => {
         return (
           <div key={content.title}>
