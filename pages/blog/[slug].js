@@ -7,9 +7,11 @@ import prism from 'remark-prism'
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
 import Layout from '@/components/layout'
 
-export default function PostPage({ source, frontMatter }) {
+export default function BlogPost({ source, frontMatter }) {
   return (
     <Layout {...frontMatter}>
+      <h1>{frontMatter.title}</h1>
+      <p>Published on: {frontMatter.datePublished}</p>
       <MDXRemote {...source} />
     </Layout>
   )

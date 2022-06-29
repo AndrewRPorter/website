@@ -1,11 +1,11 @@
-import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
-import Layout from '@/components/layout'
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import Link from 'next/link'
+import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
+import Layout from '@/components/layout'
 
-export default function TestPage({ allContent }) {
+export default function Blog({ allContent }) {
   return (
     <Layout seoTitle="Blog | Andrew Porter">
       {allContent.map((content) => {
