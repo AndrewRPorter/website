@@ -6,12 +6,11 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 
 export default function TestPage({ allContent }) {
-  console.log(allContent)
   return (
     <Layout seoTitle="Blog | Andrew R. Porter">
       {allContent.map((content) => {
         return (
-          <div>
+          <div key={content.title}>
             <div>{content.title}</div>
             {content.description} {content.date_published}
             <Link href={`/blog/${content.path}`}>Read More</Link>
