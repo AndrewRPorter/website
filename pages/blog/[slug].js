@@ -6,6 +6,7 @@ import path from 'path'
 import prism from 'remark-prism'
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
 import Layout from '@/components/layout'
+import PropTypes from 'prop-types'
 
 export default function BlogPost({ source, frontMatter }) {
   return (
@@ -15,6 +16,17 @@ export default function BlogPost({ source, frontMatter }) {
       <MDXRemote {...source} />
     </Layout>
   )
+}
+
+BlogPost.propTypes = {
+  source: PropTypes.object.isRequired,
+  frontMatter: PropTypes.shape({
+    title: PropTypes.string,
+    path: PropTypes.string,
+    setoTitle: PropTypes.string,
+    description: PropTypes.string,
+    datePublished: PropTypes.string
+  }).isRequired
 }
 
 export const getStaticProps = async ({ params }) => {

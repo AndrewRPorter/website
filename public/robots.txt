@@ -1,3 +1,4 @@
 User-agent: *
+Allow: /blog
 
 Sitemap: https://www.andrewrporter.com/sitemap.xml
