@@ -1,5 +1,5 @@
-import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
-import Layout from '../../components/layout'
+import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
+import Layout from '@/components/layout'
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'

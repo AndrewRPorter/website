@@ -4,8 +4,8 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import prism from 'remark-prism'
-import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
-import Layout from '../../components/layout'
+import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
+import Layout from '@/components/layout'
 
 export default function PostPage({ source, frontMatter }) {
   return (
