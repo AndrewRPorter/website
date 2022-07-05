@@ -6,6 +6,7 @@ import path from 'path'
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
 import Layout from '@/components/layout'
 import PropTypes from 'prop-types'
+import rehypeHighlight from 'rehype-highlight'
 
 export default function BlogPost({ source, frontMatter }) {
   return (
@@ -35,7 +36,10 @@ export const getStaticProps = async ({ params }) => {
   const { content, data } = matter(source)
 
   const mdxSource = await serialize(content, {
-    scope: data
+    scope: data,
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight]
+    }
   })
 
   return {
