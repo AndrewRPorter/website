@@ -3,7 +3,6 @@ import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
-import prism from 'remark-prism'
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
 import Layout from '@/components/layout'
 import PropTypes from 'prop-types'
@@ -36,9 +35,6 @@ export const getStaticProps = async ({ params }) => {
   const { content, data } = matter(source)
 
   const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [prism]
-    },
     scope: data
   })
 
