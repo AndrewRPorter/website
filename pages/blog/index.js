@@ -7,12 +7,16 @@ import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/mdxUtils'
 import Layout from '@/components/layout'
 
 export default function Blog({ allContent }) {
+  const sortedContent = allContent.sort((curr, compare) =>
+    curr.datePublished > compare.datePublished ? -1 : 1
+  )
+
   return (
     <Layout seoTitle="Blog | Andrew Porter">
       <Heading as="h1" fontSize="4xl" py="16px">
         Blog Posts
       </Heading>
-      {allContent.map((content) => {
+      {sortedContent.map((content) => {
         return (
           <>
             <Box p="16px">
