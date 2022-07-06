@@ -2,7 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
-import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
+import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/mdxUtils'
 import Layout from '@/components/layout'
 import PropTypes from 'prop-types'
 import rehypeHighlight from 'rehype-highlight'
@@ -28,7 +28,7 @@ BlogPost.propTypes = {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.md`)
+  const postFilePath = path.join(BLOG_POST_PATH, `${params.slug}.md`)
   const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)
@@ -49,7 +49,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-  const paths = postFilePaths
+  const paths = blogPostFilePaths
     // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ''))
     // Map the path into the static paths object required by Next.js

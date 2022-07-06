@@ -13,8 +13,10 @@ export default function Home({ source }) {
 }
 
 export async function getStaticProps() {
-  const markdownPath = path.join('markdown', `index.md`)
-  const source = fs.readFileSync(markdownPath)
+  const fileName = path.basename(__filename)
+  const markdownFileName = fileName.replace('.js', '.md')
+  const markdownFilePath = path.join('markdown', markdownFileName)
+  const source = fs.readFileSync(markdownFilePath)
   const mdxSource = await serialize(source)
   return { props: { source: mdxSource } }
 }
