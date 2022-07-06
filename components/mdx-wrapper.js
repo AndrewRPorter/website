@@ -6,7 +6,7 @@ const components = {
     <Heading
       as="h1"
       size="2xl"
-      m="16px"
+      p="16px"
       color={useColorModeValue('brand.600', 'gray.300')}
       {...props}
     />
@@ -15,7 +15,7 @@ const components = {
     <Heading
       as="h2"
       size="xl"
-      m="16px"
+      p="16px"
       color={useColorModeValue('brand.600', 'gray.300')}
       {...props}
     />
@@ -24,7 +24,7 @@ const components = {
     <Heading
       as="h3"
       size="lg"
-      m="16px"
+      p="16px"
       color={useColorModeValue('brand.600', 'gray.300')}
       {...props}
     />
@@ -32,7 +32,7 @@ const components = {
   p: (props) => (
     <Text
       fontSize="md"
-      m="16px"
+      p="16px"
       color={useColorModeValue('brand.600', 'gray.300')}
       {...props}
     />
@@ -40,8 +40,9 @@ const components = {
   a: (props) => (
     <Link
       fontSize="md"
-      m="16px"
-      color={useColorModeValue('brand.600', 'gray.300')}
+      p="16px"
+      color={useColorModeValue('blue.600', 'blue.300')}
+      textDecoration="underline"
       {...props}
     />
   ),
