@@ -1,13 +1,13 @@
 import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 import path from 'path'
 import fs from 'fs'
 import Layout from '@/components/layout'
+import MDXWrapper from '@/components/mdx-wrapper'
 
 export default function Home({ source }) {
   return (
     <Layout>
-      <MDXRemote {...source} />
+      <MDXWrapper {...source} />
     </Layout>
   )
 }

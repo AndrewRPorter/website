@@ -1,19 +1,17 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils'
 import Layout from '@/components/layout'
 import PropTypes from 'prop-types'
 import rehypeHighlight from 'rehype-highlight'
+import MDXWrapper from '@/components/mdx-wrapper'
 
 export default function BlogPost({ source, frontMatter }) {
   return (
     <Layout {...frontMatter}>
-      <h1>{frontMatter.title}</h1>
-      <p>Published on: {frontMatter.datePublished}</p>
-      <MDXRemote {...source} />
+      <MDXWrapper {...source} />
     </Layout>
   )
 }
