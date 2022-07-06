@@ -2,14 +2,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const config = {
   initialColorMode: 'light',
-  useSystemColorMode: false,
-  styles: {
-    global: () => ({
-      body: {
-        bg: 'white'
-      }
-    })
-  }
+  useSystemColorMode: false
 }
 
 export default function Application({ Component, pageProps }) {

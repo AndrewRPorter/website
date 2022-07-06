@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import PropTypes from 'prop-types'
+import Footer from '@/components/navigation/footer'
+import Header from '@/components/navigation/header'
+import { Box, Container } from '@chakra-ui/react'
 
 export default function Layout({ children, seoTitle, description }) {
   return (
@@ -13,7 +16,15 @@ export default function Layout({ children, seoTitle, description }) {
         <meta name="description" content={description}></meta>
         <title>{seoTitle}</title>
       </Head>
-      <>{children}</>
+      <Box>
+        <Header />
+        <Box as="main">
+          <Container py={8} maxWidth="4xl">
+            {children}
+          </Container>
+        </Box>
+        <Footer />
+      </Box>
     </>
   )
 }
