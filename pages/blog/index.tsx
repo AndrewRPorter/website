@@ -1,3 +1,4 @@
+import { GetStaticProps, NextPage } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import {
@@ -10,9 +11,19 @@ import {
 import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import Layout from '@/components/layout'
+import { Fragment } from 'react'
 
-export default function Blog({ allContent }) {
-  const sortedContent = allContent.sort((curr, compare) =>
+type Props = {
+  allContent: {
+    title: string
+    description: string
+    datePublished: string
+    path: string
+  }[]
+}
+
+export default function Blog(props: Props) {
+  const sortedContent = props.allContent.sort((curr, compare) =>
     curr.datePublished > compare.datePublished ? -1 : 1
   )
 
@@ -23,11 +34,11 @@ export default function Blog({ allContent }) {
       </Heading>
       {sortedContent.map((content) => {
         return (
-          <>
+          <Fragment key={content.title}>
             <Box p="16px">
               <Divider />
             </Box>
-            <Box key={content.title} py="16px">
+            <Box py="16px">
               <Heading as="h2" fontSize="2xl">
                 {content.title}
               </Heading>
@@ -42,14 +53,14 @@ export default function Blog({ allContent }) {
                 </Text>
               </Link>
             </Box>
-          </>
+          </Fragment>
         )
       })}
     </Layout>
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allContent = blogPostFilePaths.map((filePath) => {
     const blogPostFilePath = path.join(BLOG_POST_PATH, filePath)
     const { data } = getDataFromFilePath(blogPostFilePath)

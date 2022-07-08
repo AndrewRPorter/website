@@ -1,18 +1,22 @@
+import { GetStaticProps, NextPage } from 'next'
 import path from 'path'
 import Layout from '@/components/layout'
 import MDXWrapper from '@/components/mdx-wrapper'
 import { getMDXDataFromFileName } from '@/utils/mdxUtils'
+import { SerializeOptions } from 'next-mdx-remote/dist/types'
 
-export default function Home({ source }) {
+const Home: NextPage = (props: SerializeOptions) => {
   return (
     <Layout>
-      <MDXWrapper {...source} />
+      <MDXWrapper {...props} />
     </Layout>
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const fileName = path.basename(__filename)
   const mdxSource = await getMDXDataFromFileName(fileName)
-  return { props: { source: mdxSource } }
+  return { props: mdxSource }
 }
+
+export default Home

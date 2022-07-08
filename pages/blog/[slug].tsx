@@ -1,3 +1,4 @@
+import { GetStaticProps, GetStaticPaths } from 'next'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -27,8 +28,9 @@ BlogPost.propTypes = {
   }).isRequired
 }
 
-export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(BLOG_POST_PATH, `${params.slug}.md`)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = params
+  const postFilePath = path.join(BLOG_POST_PATH, `${slug}.md`)
   const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)
@@ -48,7 +50,7 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = blogPostFilePaths
     // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ''))

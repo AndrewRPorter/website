@@ -1,10 +1,18 @@
 import Head from 'next/head'
-import PropTypes from 'prop-types'
 import Footer from '@/components/navigation/footer'
 import Header from '@/components/navigation/header'
 import { Box, Container } from '@chakra-ui/react'
 
-export default function Layout({ children, seoTitle, description }) {
+type Props = {
+  children: React.ReactNode
+  seoTitle?: string
+  description?: string
+}
+
+const DEFAULT_SEO_TITLE = 'Andrew Porter'
+const DEFAULT_SEO_DESCRIPTION = "Andrew Porter's personal website."
+
+export default function Layout(props: Props) {
   return (
     <>
       <Head>
@@ -13,29 +21,23 @@ export default function Layout({ children, seoTitle, description }) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5"
         ></meta>
-        <meta name="description" content={description}></meta>
-        <title>{seoTitle}</title>
+        <meta
+          name="description"
+          content={
+            props.description ? props.description : DEFAULT_SEO_DESCRIPTION
+          }
+        ></meta>
+        <title>{props.seoTitle ? props.seoTitle : DEFAULT_SEO_TITLE}</title>
       </Head>
       <Box>
         <Header />
         <Box as="main">
           <Container py={8} maxWidth="4xl">
-            {children}
+            {props.children}
           </Container>
         </Box>
         <Footer />
       </Box>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  description: PropTypes.string,
-  title: PropTypes.string
-}
-
-Layout.defaultProps = {
-  seoTitle: 'Andrew Porter',
-  description: "Andrew Porter's personal website."
 }

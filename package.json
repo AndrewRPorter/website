@@ -16,9 +16,6 @@
     "next-mdx-remote": "^3.0.8",
     "nextra": "^0.4.4",
     "nextra-theme-blog": "^0.1.5",
-    "prism-react-renderer": "^1.2.1",
-    "prismjs": "^1.25.0",
-    "prop-types": "^15.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-highlight": "^5.0.2",
@@ -30,5 +27,10 @@
     "tabWidth": 2,
     "trailingComma": "none",
     "semi": false
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
+    "typescript": "^4.7.4"
   }
 }
