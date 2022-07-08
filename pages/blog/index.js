@@ -1,9 +1,14 @@
 import path from 'path'
-import fs from 'fs'
-import matter from 'gray-matter'
 import Link from 'next/link'
-import { Box, Text, Heading, Divider } from '@chakra-ui/react'
-import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/mdxUtils'
+import {
+  Box,
+  Text,
+  Heading,
+  Divider,
+  useColorModeValue
+} from '@chakra-ui/react'
+import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
+import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import Layout from '@/components/layout'
 
 export default function Blog({ allContent }) {
@@ -28,7 +33,14 @@ export default function Blog({ allContent }) {
               </Heading>
               <Text>{content.description}</Text>
               <Text>{content.datePublished}</Text>
-              <Link href={`/blog/${content.path}`}>Read More</Link>
+              <Link href={`/blog/${content.path}`}>
+                <Text
+                  color={useColorModeValue('blue.600', 'blue.300')}
+                  textDecoration="underline"
+                >
+                  Read More
+                </Text>
+              </Link>
             </Box>
           </>
         )
@@ -38,16 +50,11 @@ export default function Blog({ allContent }) {
 }
 
 export async function getStaticProps() {
-  const allContent = []
-  const filePaths = blogPostFilePaths
-
-  for (const filePath of filePaths) {
+  const allContent = blogPostFilePaths.map((filePath) => {
     const blogPostFilePath = path.join(BLOG_POST_PATH, filePath)
-    const source = fs.readFileSync(blogPostFilePath)
-
-    const { data } = matter(source)
-    allContent.push({ ...data, path: filePath.replace('.md', '') })
-  }
+    const { data } = getDataFromFilePath(blogPostFilePath)
+    return data
+  })
 
   return { props: { allContent } }
 }

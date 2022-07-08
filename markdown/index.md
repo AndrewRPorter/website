@@ -1,9 +1,9 @@
 # Hi, my name is Andrew Porter
 
-I'm a Software Engineer at Wayfair supporting our international expansion efforts.
+I am a remote Software Engineer at Wayfair supporting our international expansion efforts. I enjoy writing web applications with Python and Next.js.
 
-I enjoy writing web applications. Besides writing code, I like working out, investing, playing golf and cooking.
+Besides writing code I like to workout, invest, golf, and cook.
 
-<a href="https://github.com/AndrewRPorter" target="_blank" >GitHub</a>
+[GitHub](https://github.com/AndrewRPorter)
 
-<a href="https://www.linkedin.com/in/andrew-porter/" target="_blank">LinkedIn</a>
+[LinkedIn](https://www.linkedin.com/in/andrew-porter)

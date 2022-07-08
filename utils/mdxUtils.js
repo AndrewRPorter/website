@@ -1,11 +1,17 @@
 import fs from 'fs'
 import path from 'path'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MARKDOWN_PATH } from '@/utils/constants'
 
-// POSTS_PATH is useful when you want to get the path to a specific file
-export const BLOG_POST_PATH = path.join(process.cwd(), 'markdown/blog')
-
-// postFilePaths is the list of all md files inside the POSTS_PATH directory
-export const blogPostFilePaths = fs
-  .readdirSync(BLOG_POST_PATH)
-  // Only include md(x) files
-  .filter((path) => /\.md?$/.test(path))
+/**
+ * Get MDX data from filename
+ * @param {string} fileName JS file name
+ * @returns mdxSource data
+ */
+export const getMDXDataFromFileName = async (fileName) => {
+  const markdownFileName = fileName.replace('.js', '.md')
+  const markdownFilePath = path.join(MARKDOWN_PATH, markdownFileName)
+  const source = fs.readFileSync(markdownFilePath)
+  const mdxSource = await serialize(source)
+  return mdxSource
+}

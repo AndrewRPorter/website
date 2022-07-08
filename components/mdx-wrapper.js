@@ -40,7 +40,6 @@ const components = {
   a: (props) => (
     <Link
       fontSize="md"
-      p="16px"
       color={useColorModeValue('blue.600', 'blue.300')}
       textDecoration="underline"
       {...props}
