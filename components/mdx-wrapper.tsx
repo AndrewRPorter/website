@@ -45,7 +45,9 @@ const components = {
       {...props}
     />
   ),
-  code: (props) => <Box m="16px" p="16px" borderRadius="8px" {...props} />
+  code: (props) => (
+    <Box m="16px" p="16px" borderRadius="8px" {...props} overflow="scroll" />
+  )
 }
 
 export default function MDXWrapper(props) {
