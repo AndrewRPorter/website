@@ -60,6 +60,7 @@ export default function Footer() {
             as="a"
             href="https://github.com/AndrewRPorter"
             aria-label="GitHub"
+            target="_blank"
           >
             <FaGithub />
           </Button>
@@ -67,6 +68,7 @@ export default function Footer() {
             as="a"
             href="https://www.linkedin.com/in/andrew-porter"
             aria-label="LinkedIn"
+            target="_blank"
           >
             <FaLinkedin />
           </Button>

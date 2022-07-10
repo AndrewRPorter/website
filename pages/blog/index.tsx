@@ -48,6 +48,7 @@ export default function Blog(props: Props) {
                 <Text
                   color={useColorModeValue('blue.600', 'blue.300')}
                   textDecoration="underline"
+                  _hover={{ cursor: 'pointer' }}
                 >
                   Read More
                 </Text>

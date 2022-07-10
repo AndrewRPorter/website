@@ -36,7 +36,7 @@ export default function Application({ Component, pageProps }: AppProps) {
         <Button
           position="fixed"
           bottom="8%"
-          left="92%"
+          right="8%"
           onClick={handleScrollUp}
         >
           <ChevronUpIcon />
