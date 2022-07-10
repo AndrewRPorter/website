@@ -3,9 +3,11 @@ import {
   Container,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
+  Button
 } from '@chakra-ui/react'
 import Link from 'next/link'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -43,6 +45,23 @@ export default function Footer() {
               </Text>
             </Link>
           </Stack>
+        </Container>
+
+        <Container
+          as={Stack}
+          maxW="6xl"
+          py={4}
+          spacing={4}
+          direction="row"
+          justify="center"
+          align="center"
+        >
+          <Button as="a" href="https://github.com/AndrewRPorter">
+            <FaGithub />
+          </Button>
+          <Button as="a" href="https://www.linkedin.com/in/andrew-porter">
+            <FaLinkedin />
+          </Button>
         </Container>
 
         <Container as={Stack} maxW="6xl" py={4} spacing={4}>
