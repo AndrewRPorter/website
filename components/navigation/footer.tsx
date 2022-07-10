@@ -56,10 +56,18 @@ export default function Footer() {
           justify="center"
           align="center"
         >
-          <Button as="a" href="https://github.com/AndrewRPorter">
+          <Button
+            as="a"
+            href="https://github.com/AndrewRPorter"
+            aria-label="GitHub"
+          >
             <FaGithub />
           </Button>
-          <Button as="a" href="https://www.linkedin.com/in/andrew-porter">
+          <Button
+            as="a"
+            href="https://www.linkedin.com/in/andrew-porter"
+            aria-label="LinkedIn"
+          >
             <FaLinkedin />
           </Button>
         </Container>

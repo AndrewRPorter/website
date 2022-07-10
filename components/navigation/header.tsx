@@ -21,7 +21,14 @@ export default function Header() {
 
           <Flex alignItems="center">
             <Stack direction="row" spacing={7}>
-              <Button onClick={toggleColorMode}>
+              <Button
+                onClick={toggleColorMode}
+                aria-label={
+                  colorMode === 'light'
+                    ? 'Switch to dark mode'
+                    : 'Switch to light mode'
+                }
+              >
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
             </Stack>
