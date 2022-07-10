@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote'
 import { Heading, Text, Link, Box, useColorModeValue } from '@chakra-ui/react'
 
@@ -47,6 +48,11 @@ const components = {
   ),
   code: (props) => (
     <Box m="16px" p="16px" borderRadius="8px" {...props} overflow="scroll" />
+  ),
+  img: (props) => (
+    <Box p="16px" display="flex" justifyContent="center" alignItems="center">
+      <Image {...props} />
+    </Box>
   )
 }
 
