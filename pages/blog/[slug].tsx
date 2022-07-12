@@ -5,27 +5,38 @@ import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import Layout from '@/components/layout'
-import PropTypes from 'prop-types'
 import rehypeHighlight from 'rehype-highlight'
 import MDXWrapper from '@/components/mdx-wrapper'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 
-export default function BlogPost({ source, frontMatter }) {
-  return (
-    <Layout {...frontMatter}>
-      <MDXWrapper {...source} />
-    </Layout>
-  )
+type Props = {
+  source: any
+  frontMatter: {
+    title: string
+    seoTitle: string
+    description: string
+    path: string
+    datePublished: string
+  }
 }
 
-BlogPost.propTypes = {
-  source: PropTypes.object.isRequired,
-  frontMatter: PropTypes.shape({
-    title: PropTypes.string,
-    path: PropTypes.string,
-    setoTitle: PropTypes.string,
-    description: PropTypes.string,
-    datePublished: PropTypes.string
-  }).isRequired
+export default function BlogPost(props: Props) {
+  return (
+    <Layout {...props.frontMatter}>
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>{props.frontMatter.title}</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+      <MDXWrapper {...props.source} />
+    </Layout>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {

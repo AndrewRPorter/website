@@ -6,7 +6,10 @@ import {
   Text,
   Heading,
   Divider,
-  useColorModeValue
+  useColorModeValue,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink
 } from '@chakra-ui/react'
 import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import { getDataFromFilePath } from '@/utils/grayMatterUtils'
@@ -29,6 +32,14 @@ export default function Blog(props: Props) {
 
   return (
     <Layout seoTitle="Blog | Andrew Porter">
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>Blog</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
       <Box p="16px">
         <Heading as="h1" fontSize="4xl" py="16px">
           Blog Posts
