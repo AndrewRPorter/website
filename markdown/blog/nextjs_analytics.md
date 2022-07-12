@@ -26,15 +26,17 @@ If you don't already have a `_app.js` file created in your Next.js project, crea
 
 We will be using the [`next/script`](https://nextjs.org/docs/basic-features/script) component to load Google Analytics scripts. This allows us to load scripts outside of the `next/head` and may result in performance improvements.
 
-```js
+```jsx
 import Script from 'next/script'
+
+const GTAG_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
       />
       <Script
         id="gtag-init"
@@ -44,7 +46,7 @@ export default function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            gtag('config', '${GTAG_ID}', {
               page_path: window.location.pathname,
             });
           `
@@ -62,7 +64,7 @@ Create a new folder called `lib`. Within `lib`, create a new file called `ga.js`
 
 `ga.js` will have to functions, one to track page views and one to track events.
 
-```js
+```jsx
 export const pageview = (url) => {
   if (window !== undefined) {
     window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
@@ -84,7 +86,7 @@ Within our `_app.js` file, we are going to use the Next.js router to listen for 
 
 We want to create a use effect hook in our app component that looks like:
 
-```js
+```jsx
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { pageview } from "../lib/ga";
@@ -124,7 +126,7 @@ Say for example you wanted to track a button click that submited a search field.
 
 After importing the `event` function we can trigger an event on a button like so:
 
-```js
+```jsx
 <button
   onClick={() =>
     event({
@@ -155,7 +157,7 @@ Read more about `blockHosts` in Cypress [here](https://docs.cypress.io/guides/re
 
 See the final `_app.js` file below:
 
-```js
+```jsx
 import Script from 'next/script'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
