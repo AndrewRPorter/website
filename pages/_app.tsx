@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme, Button } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme, IconButton } from '@chakra-ui/react'
 import { ChevronUpIcon } from '@chakra-ui/icons'
 
 const config = {
@@ -33,14 +33,14 @@ export default function Application({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={extendTheme(config)}>
       <div ref={refScrollUp}></div>
       {showScrollToTop && (
-        <Button
+        <IconButton
           position="fixed"
           bottom="8%"
           right="8%"
           onClick={handleScrollUp}
-        >
-          <ChevronUpIcon />
-        </Button>
+          aria-label="Go to top of page"
+          icon={<ChevronUpIcon />}
+        />
       )}
       <Component {...pageProps} />
     </ChakraProvider>

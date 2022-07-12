@@ -29,34 +29,36 @@ export default function Blog(props: Props) {
 
   return (
     <Layout seoTitle="Blog | Andrew Porter">
-      <Heading as="h1" fontSize="4xl" py="16px">
-        Blog Posts
-      </Heading>
-      {sortedContent.map((content) => {
-        return (
-          <Fragment key={content.title}>
-            <Box p="16px">
-              <Divider />
-            </Box>
-            <Box py="16px">
-              <Heading as="h2" fontSize="2xl">
-                {content.title}
-              </Heading>
-              <Text>{content.description}</Text>
-              <Text>{content.datePublished}</Text>
-              <Link href={`/blog/${content.path}`}>
-                <Text
-                  color={useColorModeValue('blue.600', 'blue.300')}
-                  textDecoration="underline"
-                  _hover={{ cursor: 'pointer' }}
-                >
-                  Read More
-                </Text>
-              </Link>
-            </Box>
-          </Fragment>
-        )
-      })}
+      <Box p="16px">
+        <Heading as="h1" fontSize="4xl" py="16px">
+          Blog Posts
+        </Heading>
+        {sortedContent.map((content) => {
+          return (
+            <Fragment key={content.title}>
+              <Box p="16px">
+                <Divider />
+              </Box>
+              <Box py="16px">
+                <Heading as="h2" fontSize="2xl">
+                  {content.title}
+                </Heading>
+                <Text>{content.description}</Text>
+                <Text>{content.datePublished}</Text>
+                <Link href={`/blog/${content.path}`}>
+                  <Text
+                    color={useColorModeValue('blue.600', 'blue.300')}
+                    textDecoration="underline"
+                    _hover={{ cursor: 'pointer' }}
+                  >
+                    Read More
+                  </Text>
+                </Link>
+              </Box>
+            </Fragment>
+          )
+        })}
+      </Box>
     </Layout>
   )
 }
