@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import {
