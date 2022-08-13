@@ -51,7 +51,7 @@ const components = {
   ),
   img: (props) => (
     <Box p="16px" display="flex" justifyContent="center" alignItems="center">
-      <Image {...props} layout="fixed" />
+      <Image {...props} layout="fixed" priority />
     </Box>
   )
 }
