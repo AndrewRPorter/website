@@ -24,7 +24,7 @@ const components = {
   h3: (props) => (
     <Heading
       as="h3"
-      size="lg"
+      size="md"
       p="16px"
       color={useColorModeValue('brand.600', 'gray.300')}
       {...props}
@@ -48,6 +48,14 @@ const components = {
   ),
   code: (props) => (
     <Box m="16px" p="16px" borderRadius="8px" {...props} overflow="scroll" />
+  ),
+  inlineCode: (props) => (
+    <Box
+      as="span"
+      p={0.5}
+      backgroundColor={useColorModeValue('gray.200', 'gray.600')}
+      {...props}
+    />
   ),
   img: (props) => (
     <Box p="16px" display="flex" justifyContent="center" alignItems="center">

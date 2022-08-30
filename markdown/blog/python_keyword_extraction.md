@@ -2,7 +2,7 @@
 title: Basic Keyword Extraction in Python
 path: python_keyword_extraction
 seoTitle: Basic Keyword Extraction in Python - Andrew R. Porter
-description: Keyword extraction in Python via RAKE (Rapid Automatic Keyword Extraction)
+description: Keyword extraction in Python via RAKE (Rapid Automatic Keyword Extraction).
 datePublished: !!str 2022-08-30
 ---
 
@@ -14,13 +14,13 @@ Despite these scary words, keyword extraction is fairly simple to perform in Pyt
 
 ## Background
 
-There are several different libraries/methods that can perform keyword extraction in Python. In this post, we will mainly be focused on RAKE (Rapid Automatic Keyword Extraction).
+There are several different libraries/methods that can perform keyword extraction in Python. In this post, we will mainly focus on RAKE (Rapid Automatic Keyword Extraction).
 
-RAKE is a novel method of automatically extracting keywords from documents created by research MUCH smarter than me. Check out their paper [here](https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents).
+RAKE is a novel method of automatically extracting keywords from documents created by researchers **much** smarter than me. Check out their paper [here](https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents).
 
-Thankfully, the open-source community has taken the approach described in this paper and created a helper class to extract keywords. We will be using the [rake-nltk](https://github.com/csurfer/rake-nltk) package to perform (note there are other python RAKE implementations but this one is PIP installable which I like).
+Thankfully, the open-source community has taken the approach described in this paper and created a wrapper extract keywords. We will be using the [rake-nltk](https://github.com/csurfer/rake-nltk) package to perform (note there are other python RAKE implementations but this one is PIP installable which I like).
 
-_Checkout [this](https://www.analyticsvidhya.com/blog/2022/01/four-of-the-easiest-and-most-effective-methods-of-keyword-extraction-from-a-single-text-using-python/) awesome blog post by Ali Mansour if you want to see a comparison of other Python keyword extraction libraries._
+_Checkout [this](https://www.analyticsvidhya.com/blog/2022/01/four-of-the-easiest-and-most-effective-methods-of-keyword-extraction-from-a-single-text-using-python/) awesome blog post by [Ali Mansour](https://www.analyticsvidhya.com/blog/author/ali8445u/) if you want to see a comparison of other Python keyword extraction libraries._
 
 ## Setup
 
@@ -30,9 +30,9 @@ Start by installing the package
 pip install rake-nltk
 ```
 
-_Note that if you see an error regarding missing nltk resources (stopwords or punkt), you may need to download them from nltk [here](https://github.com/csurfer/rake-nltk#debugging-setup)_
+### Debugging
 
-Example nltk resource download commands:
+If you see an error regarding missing nltk resources (stopwords or punkt), you may need to download them from nltk via the following commands:
 
 ```
 python3 -c "import nltk; nltk.download('stopwords')"
@@ -62,7 +62,7 @@ for score, keyword in keywords_with_scores:
 
 This will output the following keywords and their associated scores:
 
-```
+```shell
 severe acute respiratory syndrome coronavirus 2 32.5
 disease quickly spread worldwide 15.333333333333334
 coronavirus disease 2019 10.333333333333334
@@ -87,4 +87,4 @@ _Note that you can use `get_ranked_phrases` instead to get just the keywords in 
 
 ## Conclusion
 
-Clearly the above output is not perfect but all in all the out of the box performance on a fairly small document is pretty impressive. Some text cleaning and output pruning can be performed to further reduce junk keywords such as `2 ).`.
+Clearly the above output is not perfect but all in all the out of the box performance on a fairly small document is pretty impressive. Some text cleaning and output pruning can be performed to further reduce junk keywords such as `2 ).` and `19`.

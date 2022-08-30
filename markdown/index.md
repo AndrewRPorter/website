@@ -4,4 +4,6 @@ I am a remote Software Engineer at GitHub on the billing team. I enjoy writing w
 
 Besides writing code, I like to workout, snowboard, golf, and cook.
 
+I also have a [blog](/blog) where I talk about tech stuff.
+
 <img src="/me_rounded.png" alt="Picture of me" width="186px" height="202px" />
