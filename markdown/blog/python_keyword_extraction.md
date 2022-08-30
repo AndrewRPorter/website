@@ -3,7 +3,7 @@ title: Basic Keyword Extraction in Python
 path: python_keyword_extraction
 seoTitle: Basic Keyword Extraction in Python - Andrew R. Porter
 description: Keyword extraction in Python via RAKE (Rapid Automatic Keyword Extraction)
-datePublished: August 29th, 2022
+datePublished: August 30th, 2022
 ---
 
 # Basic Keyword Extraction in Python
@@ -30,7 +30,7 @@ Start by installing the package
 pip install rake-nltk
 ```
 
-_note that if you see an error regarding missing nltk resources (stopwords or punkt), you may need to download them from nltk [here](https://github.com/csurfer/rake-nltk#debugging-setup)_
+_Note that if you see an error regarding missing nltk resources (stopwords or punkt), you may need to download them from nltk [here](https://github.com/csurfer/rake-nltk#debugging-setup)_
 
 Example nltk resource download commands:
 
@@ -83,7 +83,7 @@ cov 1.0
 china 1.0
 ```
 
-_note that you can use `get_ranked_phrases` instead to get just the keywords in ranked order without the associated score_
+_Note that you can use `get_ranked_phrases` instead to get just the keywords in ranked order without the associated score_
 
 ## Conclusion
 

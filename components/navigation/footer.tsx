@@ -4,7 +4,8 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  Button
+  Button,
+  Link as ChakraLink
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
@@ -44,6 +45,21 @@ export default function Footer() {
                 Blog
               </Text>
             </Link>
+
+            <ChakraLink
+              href="https://github.com/AndrewRPorter/website"
+              target="_blank"
+            >
+              <Text
+                textDecoration="underline"
+                color={useColorModeValue('brand.600', 'gray.300')}
+                _hover={{
+                  cursor: 'pointer'
+                }}
+              >
+                Source
+              </Text>
+            </ChakraLink>
           </Stack>
         </Container>
 
