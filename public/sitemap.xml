@@ -12,4 +12,16 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.andrewrporter.com/blog/nextjs_analytics</loc>
+    <lastmod>2022-08-09T12:00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.andrewrporter.com/blog/python_keyword_extraction</loc>
+    <lastmod>2022-08-09T12:00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

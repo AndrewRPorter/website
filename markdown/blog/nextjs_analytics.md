@@ -1,7 +1,7 @@
 ---
 title: Next.js Google Analytics
 path: nextjs_analytics
-seoTitle: Setup Google Analytics in a Next.js Application
+seoTitle: Setup Google Analytics in a Next.js Application - Andrew R. Porter
 description: Basic tutorial showing you how to utilize Google Analytics in Next.js.
 datePublished: July 9th, 2022
 ---
