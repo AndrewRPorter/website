@@ -15,6 +15,7 @@ import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import Layout from '@/components/layout'
 import { Fragment } from 'react'
+import { useRouter } from 'next/router'
 
 type Props = {
   allContent: {
@@ -26,9 +27,29 @@ type Props = {
 }
 
 export default function Blog(props: Props) {
-  const sortedContent = props.allContent.sort((curr, compare) =>
-    curr.datePublished > compare.datePublished ? -1 : 1
-  )
+  const router = useRouter()
+  const locale = router.locale
+
+  const sortedContent = props.allContent.sort((curr, compare) => {
+    const parsedCurrentDate = Date.parse(curr.datePublished)
+    const parsedCompareDate = Date.parse(compare.datePublished)
+    return parsedCurrentDate > parsedCompareDate ? -1 : 1
+  })
+
+  /**
+   * Parses and formats an input date string from grey-matter
+   *
+   * @param date input date string of form year-month-date
+   * @returns formatted date string
+   */
+  const formatDate = (date: string): string => {
+    return new Date(Date.parse(date)).toLocaleDateString(locale, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    })
+  }
 
   return (
     <Layout seoTitle="Blog | Andrew Porter">
@@ -55,7 +76,7 @@ export default function Blog(props: Props) {
                   {content.title}
                 </Heading>
                 <Text>{content.description}</Text>
-                <Text>{content.datePublished}</Text>
+                <Text>{formatDate(content.datePublished)}</Text>
                 <Link href={`/blog/${content.path}`}>
                   <Text
                     color={useColorModeValue('blue.600', 'blue.300')}

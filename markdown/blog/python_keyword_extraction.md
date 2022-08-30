@@ -3,7 +3,7 @@ title: Basic Keyword Extraction in Python
 path: python_keyword_extraction
 seoTitle: Basic Keyword Extraction in Python - Andrew R. Porter
 description: Keyword extraction in Python via RAKE (Rapid Automatic Keyword Extraction)
-datePublished: August 30th, 2022
+datePublished: !!str 2022-08-30
 ---
 
 # Basic Keyword Extraction in Python
