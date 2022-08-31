@@ -1,16 +1,18 @@
 ---
-title: Basic Keyword Extraction in Python
+title: Keyword Extraction in Python via RAKE
 path: python_keyword_extraction
-seoTitle: Basic Keyword Extraction in Python - Andrew R. Porter
+seoTitle: Keyword Extraction in Python via RAKE - Andrew R. Porter
 description: Keyword extraction in Python via RAKE (Rapid Automatic Keyword Extraction).
 datePublished: !!str 2022-08-30
 ---
 
-# Basic Keyword Extraction in Python
+# Keyword Extraction in Python via RAKE
 
 [Keyword extraction](https://en.wikipedia.org/wiki/Keyword_extraction?oldformat=true) is a process by which important terms are identified that best represent the material in a document. Keyword extraction is a subset of NLP (natural language processing) and information retrieval systems.
 
 Despite these scary words, keyword extraction is fairly simple to perform in Python thanks to the beauty of open-source software.
+
+_Note that this post is also available in video form [here](https://youtu.be/xdlrQ0-okZc)._
 
 ## Background
 

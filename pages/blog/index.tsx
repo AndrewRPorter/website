@@ -46,7 +46,7 @@ export default function Blog(props: Props) {
     return new Date(Date.parse(date)).toLocaleDateString(locale, {
       weekday: 'long',
       year: 'numeric',
-      month: 'short',
+      month: 'long',
       day: 'numeric'
     })
   }
