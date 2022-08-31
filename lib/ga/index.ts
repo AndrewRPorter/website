@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * This file helps setup GA traacking on our site as laid out in:
  * https://mariestarck.com/add-google-analytics-to-your-next-js-application-in-5-easy-steps/
