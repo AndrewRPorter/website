@@ -7,6 +7,7 @@ import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import Layout from '@/components/layout'
 import rehypeHighlight from 'rehype-highlight'
 import MDXWrapper from '@/components/mdx-wrapper'
+import BlogMetaData from '@/components/blog/blog_meta_data'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import rehypeSlug from 'rehype-slug'
 
@@ -35,6 +36,7 @@ export default function BlogPost(props: Props) {
           <BreadcrumbLink>{props.frontMatter.title}</BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
+      <BlogMetaData datePublished={props.frontMatter.datePublished} />
       <MDXWrapper {...props.source} />
     </Layout>
   )
