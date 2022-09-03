@@ -1,7 +1,14 @@
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { MDXRemote } from 'next-mdx-remote'
-import { Heading, Text, Link, Box, useColorModeValue } from '@chakra-ui/react'
+import {
+  Heading,
+  Text,
+  Link,
+  Box,
+  useColorModeValue,
+  Button
+} from '@chakra-ui/react'
 
 const components = {
   h1: ({ id, ...props }) =>
@@ -114,7 +121,7 @@ const components = {
     />
   ),
   code: (props) => (
-    <Box m="16px" p="16px" borderRadius="8px" {...props} overflow="scroll" />
+    <Box m="16px" p="16px" borderRadius="8px" overflowX="auto" {...props} />
   ),
   inlineCode: (props) => (
     <Box
