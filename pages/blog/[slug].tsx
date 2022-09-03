@@ -8,6 +8,7 @@ import Layout from '@/components/layout'
 import rehypeHighlight from 'rehype-highlight'
 import MDXWrapper from '@/components/mdx-wrapper'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
+import rehypeSlug from 'rehype-slug'
 
 type Props = {
   source: any
@@ -49,7 +50,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     scope: data,
     mdxOptions: {
-      rehypePlugins: [rehypeHighlight]
+      rehypePlugins: [rehypeHighlight, rehypeSlug]
     }
   })
 

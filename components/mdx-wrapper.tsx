@@ -1,35 +1,102 @@
 import Image from 'next/image'
+import NextLink from 'next/link'
 import { MDXRemote } from 'next-mdx-remote'
 import { Heading, Text, Link, Box, useColorModeValue } from '@chakra-ui/react'
 
 const components = {
-  h1: (props) => (
-    <Heading
-      as="h1"
-      size="2xl"
-      p="16px"
-      color={useColorModeValue('brand.600', 'gray.300')}
-      {...props}
-    />
-  ),
-  h2: (props) => (
-    <Heading
-      as="h2"
-      size="xl"
-      p="16px"
-      color={useColorModeValue('brand.600', 'gray.300')}
-      {...props}
-    />
-  ),
-  h3: (props) => (
-    <Heading
-      as="h3"
-      size="md"
-      p="16px"
-      color={useColorModeValue('brand.600', 'gray.300')}
-      {...props}
-    />
-  ),
+  h1: ({ id, ...props }) =>
+    id ? (
+      <Link href={`#${id}`}>
+        <NextLink href={`#${id}`}>
+          <Heading
+            as="h1"
+            size="2xl"
+            p="16px"
+            color={useColorModeValue('brand.600', 'gray.300')}
+            {...props}
+            _hover={{
+              _before: {
+                fontSize: '28px',
+                content: '"#"',
+                position: 'relative',
+                marginLeft: '-1.2ch',
+                paddingRight: '0.2ch'
+              }
+            }}
+          />
+        </NextLink>
+      </Link>
+    ) : (
+      <Heading
+        as="h1"
+        size="2xl"
+        p="16px"
+        color={useColorModeValue('brand.600', 'gray.300')}
+        {...props}
+      />
+    ),
+  h2: ({ id, ...props }) =>
+    id ? (
+      <Link href={`#${id}`}>
+        <NextLink href={`#${id}`}>
+          <Heading
+            as="h2"
+            size="xl"
+            p="16px"
+            id={id}
+            color={useColorModeValue('brand.600', 'gray.300')}
+            {...props}
+            _hover={{
+              _before: {
+                fontSize: '28px',
+                content: "'#'",
+                position: 'relative',
+                marginLeft: '-1.2ch',
+                paddingRight: '0.2ch'
+              }
+            }}
+          />
+        </NextLink>
+      </Link>
+    ) : (
+      <Heading
+        as="h2"
+        size="xl"
+        p="16px"
+        color={useColorModeValue('brand.600', 'gray.300')}
+        {...props}
+      />
+    ),
+  h3: ({ id, ...props }) =>
+    id ? (
+      <Link href={`#${id}`}>
+        <NextLink href={`#${id}`}>
+          <Heading
+            as="h3"
+            size="md"
+            p="16px"
+            color={useColorModeValue('brand.600', 'gray.300')}
+            {...props}
+            _hover={{
+              _before: {
+                content: '"#"',
+                position: 'relative',
+                marginLeft: '-1.2ch',
+                paddingRight: '0.2ch'
+              }
+            }}
+          />
+        </NextLink>
+      </Link>
+    ) : (
+      <Heading
+        as="h3"
+        size="md"
+        p="16px"
+        color={useColorModeValue('brand.600', 'gray.300')}
+        {...props}
+      />
+    ),
   p: (props) => (
     <Text
       fontSize="md"
