@@ -25,6 +25,10 @@ type Props = {
 export default function BlogPost(props: Props) {
   return (
     <Layout {...props.frontMatter}>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/night-owl.min.css"
+      />
       <Breadcrumb>
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
