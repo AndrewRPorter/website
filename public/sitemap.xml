@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.andrewrporter.com/blog/hello_blog</loc>
+    <lastmod>2022-09-01T16:17:12.483614382Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.andrewrporter.com/blog/nextjs_analytics</loc>
     <lastmod>2022-09-01T16:17:12.483614382Z</lastmod>
     <changefreq>daily</changefreq>
