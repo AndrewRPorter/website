@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { MDXRemote } from 'next-mdx-remote'
-import {
-  Heading,
-  Text,
-  Link,
-  Box,
-  useColorModeValue,
-  Button
-} from '@chakra-ui/react'
+import { Heading, Text, Link, Box } from '@chakra-ui/react'
 
+/**
+ * Typically we would use the useColorModeValue hook here to differentiate dark
+ * styles from light styles. However, this would cause some errors in this file
+ * regarding using hooks outside of a react component/function component.
+ *
+ * See more info on this here: https://github.com/chakra-ui/chakra-ui/discussions/4177.
+ */
 const components = {
   h1: ({ id, ...props }) =>
     id ? (
@@ -19,7 +19,8 @@ const components = {
             as="h1"
             size="2xl"
             p="16px"
-            color={useColorModeValue('brand.600', 'gray.300')}
+            color="brand.600"
+            _dark={{ color: 'gray.300' }}
             {...props}
             _hover={{
               _before: {
@@ -38,11 +39,12 @@ const components = {
         as="h1"
         size="2xl"
         p="16px"
-        color={useColorModeValue('brand.600', 'gray.300')}
+        color="brand.600"
+        _dark={{ color: 'gray.300' }}
         {...props}
       />
     ),
-  h2: ({ id, ...props }) =>
+  h2: ({ id, ...props }) => {
     id ? (
       <Link href={`#${id}`}>
         <NextLink href={`#${id}`}>
@@ -51,7 +53,8 @@ const components = {
             size="xl"
             p="16px"
             id={id}
-            color={useColorModeValue('brand.600', 'gray.300')}
+            color="brand.600"
+            _dark={{ color: 'gray.300' }}
             {...props}
             _hover={{
               _before: {
@@ -70,10 +73,12 @@ const components = {
         as="h2"
         size="xl"
         p="16px"
-        color={useColorModeValue('brand.600', 'gray.300')}
+        color="brand.600"
+        _dark={{ color: 'gray.300' }}
         {...props}
       />
-    ),
+    )
+  },
   h3: ({ id, ...props }) =>
     id ? (
       <Link href={`#${id}`}>
@@ -82,7 +87,8 @@ const components = {
             as="h3"
             size="md"
             p="16px"
-            color={useColorModeValue('brand.600', 'gray.300')}
+            color="brand.600"
+            _dark={{ color: 'gray.300' }}
             {...props}
             _hover={{
               _before: {
@@ -100,7 +106,8 @@ const components = {
         as="h3"
         size="md"
         p="16px"
-        color={useColorModeValue('brand.600', 'gray.300')}
+        color="brand.600"
+        _dark={{ color: 'gray.300' }}
         {...props}
       />
     ),
@@ -108,14 +115,16 @@ const components = {
     <Text
       fontSize="md"
       p="16px"
-      color={useColorModeValue('brand.600', 'gray.300')}
+      color="brand.600"
+      _dark={{ color: 'gray.300' }}
       {...props}
     />
   ),
   a: (props) => (
     <Link
       fontSize="md"
-      color={useColorModeValue('blue.600', 'blue.300')}
+      color="brand.600"
+      _dark={{ color: 'gray.300' }}
       textDecoration="underline"
       {...props}
     />
@@ -127,13 +136,14 @@ const components = {
     <Box
       as="span"
       p={0.5}
-      backgroundColor={useColorModeValue('gray.200', 'gray.600')}
+      _dark={{ backgroundColor: 'gray.600' }}
+      backgroundColor="gray.200"
       {...props}
     />
   ),
   img: (props) => (
     <Box p="16px" display="flex" justifyContent="center" alignItems="center">
-      <Image {...props} layout="fixed" priority />
+      <Image alt="" {...props} layout="fixed" priority />
     </Box>
   )
 }

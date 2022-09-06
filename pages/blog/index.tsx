@@ -36,6 +36,8 @@ export default function Blog(props: Props) {
     return parsedCurrentDate > parsedCompareDate ? -1 : 1
   })
 
+  const textColor = useColorModeValue('blue.600', 'blue.300')
+
   /**
    * Parses and formats an input date string from grey-matter
    *
@@ -79,7 +81,7 @@ export default function Blog(props: Props) {
                 <Text>{formatDate(content.datePublished)}</Text>
                 <Link href={`/blog/${content.path}`}>
                   <Text
-                    color={useColorModeValue('blue.600', 'blue.300')}
+                    color={textColor}
                     textDecoration="underline"
                     _hover={{ cursor: 'pointer' }}
                   >
