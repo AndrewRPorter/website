@@ -44,7 +44,7 @@ export default function Blog(props: Props) {
    * @returns formatted date string
    */
   const formatDate = (date: string): string => {
-    return new Date(Date.parse(date)).toLocaleDateString('en-US', {
+    return new Date(Date.parse(date)).toLocaleDateString(locale, {
       weekday: 'long',
       year: 'numeric',
       month: 'long',

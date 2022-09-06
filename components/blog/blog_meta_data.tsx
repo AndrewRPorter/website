@@ -12,7 +12,7 @@ const BlogMetaData = (props: Props) => {
   // blog index page. Or, we can pass around formatted dates.
   const formattedDate = new Date(
     Date.parse(props.datePublished)
-  ).toLocaleDateString('en-US', {
+  ).toLocaleDateString(locale, {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
