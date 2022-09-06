@@ -47,8 +47,7 @@ export default function BlogPost(props: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params
-  const postFilePath = path.join(BLOG_POST_PATH, `${slug}.md`)
+  const postFilePath = path.join(BLOG_POST_PATH, `${params?.slug}.md`)
   const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)

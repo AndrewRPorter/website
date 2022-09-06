@@ -1,7 +1,16 @@
-import Image from 'next/image'
+import Image, { ImageProps } from 'next/image'
 import NextLink from 'next/link'
 import { MDXRemote } from 'next-mdx-remote'
-import { Heading, Text, Link, Box } from '@chakra-ui/react'
+import {
+  Heading,
+  Text,
+  Link,
+  Box,
+  HeadingProps,
+  BoxProps,
+  TextProps,
+  LinkProps
+} from '@chakra-ui/react'
 
 /**
  * Typically we would use the useColorModeValue hook here to differentiate dark
@@ -11,7 +20,7 @@ import { Heading, Text, Link, Box } from '@chakra-ui/react'
  * See more info on this here: https://github.com/chakra-ui/chakra-ui/discussions/4177.
  */
 const components = {
-  h1: ({ id, ...props }) =>
+  h1: ({ id, ...props }: HeadingProps) =>
     id ? (
       <Link href={`#${id}`}>
         <NextLink href={`#${id}`}>
@@ -44,7 +53,7 @@ const components = {
         {...props}
       />
     ),
-  h2: ({ id, ...props }) => {
+  h2: ({ id, ...props }: HeadingProps) =>
     id ? (
       <Link href={`#${id}`}>
         <NextLink href={`#${id}`}>
@@ -77,9 +86,8 @@ const components = {
         _dark={{ color: 'gray.300' }}
         {...props}
       />
-    )
-  },
-  h3: ({ id, ...props }) =>
+    ),
+  h3: ({ id, ...props }: HeadingProps) =>
     id ? (
       <Link href={`#${id}`}>
         <NextLink href={`#${id}`}>
@@ -111,7 +119,7 @@ const components = {
         {...props}
       />
     ),
-  p: (props) => (
+  p: (props: TextProps) => (
     <Text
       fontSize="md"
       p="16px"
@@ -120,19 +128,19 @@ const components = {
       {...props}
     />
   ),
-  a: (props) => (
+  a: (props: LinkProps) => (
     <Link
       fontSize="md"
-      color="brand.600"
+      color="blue.600"
       _dark={{ color: 'gray.300' }}
       textDecoration="underline"
       {...props}
     />
   ),
-  code: (props) => (
+  code: (props: BoxProps) => (
     <Box m="16px" p="16px" borderRadius="8px" overflowX="auto" {...props} />
   ),
-  inlineCode: (props) => (
+  inlineCode: (props: BoxProps) => (
     <Box
       as="span"
       p={0.5}
@@ -141,13 +149,13 @@ const components = {
       {...props}
     />
   ),
-  img: (props) => (
+  img: (props: ImageProps) => (
     <Box p="16px" display="flex" justifyContent="center" alignItems="center">
       <Image alt="" {...props} layout="fixed" priority />
     </Box>
   )
 }
 
-export default function MDXWrapper(props) {
+export default function MDXWrapper(props: any) {
   return <MDXRemote {...props} components={components} />
 }

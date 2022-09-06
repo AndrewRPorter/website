@@ -22,7 +22,8 @@
     "react-icons": "^4.4.0",
     "rehype-highlight": "^5.0.2",
     "rehype-slug": "^5.0.1",
-    "rss": "^1.2.2"
+    "rss": "^1.2.2",
+    "sharp": "^0.31.0"
   },
   "prettier": {
     "arrowParens": "always",

@@ -2,13 +2,18 @@ import { useEffect, useState, useRef } from 'react'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { ChakraProvider, extendTheme, IconButton } from '@chakra-ui/react'
+import {
+  ChakraProvider,
+  extendTheme,
+  IconButton,
+  type ThemeConfig
+} from '@chakra-ui/react'
 import { ChevronUpIcon } from '@chakra-ui/icons'
 import * as ga from '@/lib/ga'
 
-const config = {
-  initialColorMode: 'light',
-  useSystemColorMode: false
+const config: ThemeConfig = {
+  initialColorMode: 'system',
+  useSystemColorMode: true
 }
 
 export default function Application({ Component, pageProps }: AppProps) {
@@ -46,7 +51,7 @@ export default function Application({ Component, pageProps }: AppProps) {
   }
 
   const handleScrollUp = () => {
-    refScrollUp.current.scrollIntoView({ behavior: 'smooth' })
+    refScrollUp?.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -69,8 +74,9 @@ export default function Application({ Component, pageProps }: AppProps) {
           `
         }}
       />
-      <ChakraProvider theme={extendTheme(config)}>
-        <div ref={refScrollUp}></div>
+      <ChakraProvider theme={extendTheme({ config })}>
+        {/* TODO: look into providing a custom hook to fix this type error: https://stackoverflow.com/a/64151312/8168077*/}
+        <div ref={refScrollUp as React.RefObject<HTMLDivElement>}></div>
         {showScrollToTop && (
           <IconButton
             position="fixed"

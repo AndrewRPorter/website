@@ -6,7 +6,7 @@ import matter from 'gray-matter'
  * @param {string} filePath path to blog post markdown
  * @returns gray matter object data
  */
-export const getDataFromFilePath = (filePath) => {
+export const getDataFromFilePath = (filePath: string) => {
   const source = fs.readFileSync(filePath)
   return matter(source)
 }
