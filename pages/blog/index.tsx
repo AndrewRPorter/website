@@ -14,7 +14,6 @@ import {
 import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import Layout from '@/components/layout'
-import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 
 type Props = {
@@ -45,7 +44,7 @@ export default function Blog(props: Props) {
    * @returns formatted date string
    */
   const formatDate = (date: string): string => {
-    return new Date(Date.parse(date)).toLocaleDateString(locale, {
+    return new Date(Date.parse(date)).toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -69,7 +68,7 @@ export default function Blog(props: Props) {
         </Heading>
         {sortedContent.map((content) => {
           return (
-            <Fragment key={content.title}>
+            <Box key={content.title}>
               <Box p="16px">
                 <Divider />
               </Box>
@@ -89,7 +88,7 @@ export default function Blog(props: Props) {
                   </Text>
                 </Link>
               </Box>
-            </Fragment>
+            </Box>
           )
         })}
       </Box>
