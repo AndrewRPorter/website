@@ -31,15 +31,6 @@ const components = {
             color="brand.600"
             _dark={{ color: 'gray.300' }}
             {...props}
-            _hover={{
-              _before: {
-                fontSize: '28px',
-                content: '"#"',
-                position: 'relative',
-                marginLeft: '-1.2ch',
-                paddingRight: '0.2ch'
-              }
-            }}
           />
         </NextLink>
       </Link>
@@ -65,15 +56,6 @@ const components = {
             color="brand.600"
             _dark={{ color: 'gray.300' }}
             {...props}
-            _hover={{
-              _before: {
-                fontSize: '28px',
-                content: "'#'",
-                position: 'relative',
-                marginLeft: '-1.2ch',
-                paddingRight: '0.2ch'
-              }
-            }}
           />
         </NextLink>
       </Link>
@@ -98,14 +80,6 @@ const components = {
             color="brand.600"
             _dark={{ color: 'gray.300' }}
             {...props}
-            _hover={{
-              _before: {
-                content: '"#"',
-                position: 'relative',
-                marginLeft: '-1.2ch',
-                paddingRight: '0.2ch'
-              }
-            }}
           />
         </NextLink>
       </Link>
