@@ -9,7 +9,12 @@ import {
   HeadingProps,
   BoxProps,
   TextProps,
-  LinkProps
+  LinkProps,
+  ListProps,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+  ListItemProps
 } from '@chakra-ui/react'
 
 /**
@@ -114,6 +119,17 @@ const components = {
   code: (props: BoxProps) => (
     <Box m="16px" p="16px" borderRadius="8px" overflowX="auto" {...props} />
   ),
+  ul: (props: ListProps) => (
+    <Box p="16px" ml="16px" display="flex">
+      <UnorderedList {...props} />
+    </Box>
+  ),
+  ol: (props: ListProps) => (
+    <Box p="16px" ml="16px" display="flex">
+      <OrderedList {...props} />
+    </Box>
+  ),
+  li: (props: ListItemProps) => <ListItem {...props} />,
   inlineCode: (props: BoxProps) => (
     <Box
       as="span"

@@ -145,7 +145,7 @@ After importing the `event` function we can trigger an event on a button like so
 
 If you use automated testing frameworks like Cypress to test your applications, you will probably also want to ignore sending google analytics metrics for these tests.
 
-In Cypress, you can do this by adding `"*.google-analytics.com` to `blockHosts`.
+In Cypress, you can do this by adding `*.google-analytics.com` to `blockHosts`:
 
 ```
 "blockHosts": "*.google-analytics.com"
