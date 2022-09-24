@@ -2,7 +2,7 @@
 title: Script to suggest custom aliases
 path: alias_suggestion_script
 seoTitle: Creating a script to suggest custom aliases
-description: WIP
+description: Identify potential aliases by analyzing your systems command history.
 datePublished: !!str 2022-09-24
 ---
 

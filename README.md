@@ -1,8 +1,8 @@
 # Personal Website
 
-Next.js application, powered (mostly) by Markdown.
+Markdown personal website/blog, powered by Next.js.
 
-[www.andrewrporter.com](https://www.andrewrporter.com)
+View the website at [www.andrewrporter.com](https://www.andrewrporter.com).
 
 ## Local Development
 

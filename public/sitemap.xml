@@ -30,4 +30,10 @@
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.andrewrporter.com/blog/alias_suggestion_script</loc>
+    <lastmod>2022-09-23T16:17:12.483614382Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
