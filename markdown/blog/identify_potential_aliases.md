@@ -1,12 +1,12 @@
 ---
-title: Script to suggest custom aliases
-path: alias_suggestion_script
-seoTitle: Creating a script to suggest custom aliases
-description: Identify potential aliases by analyzing your systems command history.
+title: Identifying potential shell aliases
+path: identify_potential_aliases
+seoTitle: Identifying potential shell aliases
+description: Identify potential aliases by analyzing your systems command history (ZSH in this case).
 datePublished: !!str 2022-09-24
 ---
 
-# Create a script to suggest custom aliases
+# Identifying potential shell aliases
 
 I was setting up a new [GitHub codespaces](https://github.com/features/codespaces) environment and wanted to create some [dotfiles](https://wiki.archlinux.org/title/Dotfiles) that would automatically install and configure my local macOS environment.
 
@@ -30,7 +30,7 @@ ZSH stores a file in your home directory called `.zsh_history`.
 
 _You may have a different history file. Run `echo $HISTFILE` to see what your system uses._
 
-My system is configured to store **50000** lines in this history file (see your size with `echo $HISTSIZE`). At the time of writing my `.zsh_history` file had `2465` commands.
+My system is configured to store **50000** lines in this history file (see your size with `echo $HISTSIZE`). At the time of writing, my `.zsh_history` file had `2465` lines (historical commands).
 
 The contents of this file look like:
 
@@ -43,13 +43,13 @@ The contents of this file look like:
 : 1664040294:0;tail -n 5 ~/.zsh_history
 ```
 
-Let's parse it!
+Looks like it contains a unix timestamp and `:0;`, followed by the command itself (what we want). Let's parse it!
 
 ### Parsing the history file
 
 I am going to use ruby to do this as I am trying to learn the language. I would typically reach for Python here.
 
-The code that I wrote to do this can be found [here](https://github.com/AndrewRPorter/shell_history_analyzer) but essentially performs the steps below:
+The code that I wrote to do this can be found [here](https://github.com/AndrewRPorter/shell_history_analyzer/blob/fd25ba08f413fb26a15d56d6af8cbdb3ba5c7b9b/main.rb) but essentially performs the steps below:
 
 1. Read history file into array
 2. Prune array, stripping metadata and extracting just the command (split on `;`)
@@ -104,4 +104,8 @@ BOOM! 31 characters to 2.
 
 ## Conclusion
 
-This probably won't help anyone at all... BUT, it was a fun way for me to explore my historical command usage while learning ruby. If you are interested, my dotfiles are located [here](https://github.com/AndrewRPorter/dotfiles).
+We have identified our top used commands which could make good candidates for shell aliases. We currently have a naive score for each commands "usefulness" which is just the total count.
+
+A good candidate for an alias seems likes a command that is both long (`git add -A; git commit -m 'WIP'`) and used often. We could improve this score by creating a weight for each variable (count and length) but I'll leave that as an exercise for another time.
+
+This probably won't help anyone at all... BUT, it was a fun way for me to explore my shell command usage while learning ruby. If you are interested, my dotfiles are located [here](https://github.com/AndrewRPorter/dotfiles).
