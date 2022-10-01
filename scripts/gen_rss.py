@@ -56,7 +56,7 @@ def create_rss():
     """
 
     with open(RSS_FILE_PATH, "w") as f:
-        f.write(rss_template)
+        f.write(rss_template.strip())
 
 def create_rss_item(blog_post: BlogPost):
     return blog_post.gen_rss_item()
