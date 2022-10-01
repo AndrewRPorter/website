@@ -9,13 +9,15 @@ class BlogPost:
     link = ""
     description = ""
 
+    def sanitize(self, value):
+        return value.replace("&", "&amp;")
+
     def gen_rss_item(self):
         return f"""<item>
-            <title>{self.title}</title>
+            <title>{self.sanitize(self.title)}</title>
             <link>{BLOG_POST_URL_PATH + self.link}</link>
-            <description>{self.description}</description>
-            </item>
-        <item>
+            <description>{self.sanitize(self.description)}</description>
+        </item>
         """
 
     def __str__(self):

@@ -8,7 +8,7 @@ import {
   Link as ChakraLink
 } from '@chakra-ui/react'
 import Link from 'next/link'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaRss } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -87,6 +87,14 @@ export default function Footer() {
             target="_blank"
           >
             <FaLinkedin />
+          </Button>
+          <Button
+            as="a"
+            href="/rss.xml"
+            aria-label="RSS feed"
+            target="_blank"
+          >
+            <FaRss />
           </Button>
         </Container>
 
