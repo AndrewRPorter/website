@@ -15,7 +15,10 @@ class BlogPost:
         return value.replace("&", "&amp;")
 
     def gen_rss_item(self):
-        formatted_date = datetime.strptime(self.date, "%Y-%M-%d")
+        input_date = datetime.strptime(self.date, "%Y-%m-%d")
+        # format time to RFC-822 format per RSS feed specs:
+        # https://validator.w3.org/feed/docs/error/InvalidRFC2822Date.html
+        formatted_date = input_date.strftime("%a, %d %b %Y %H:%M:%S EST")
         return f"""<item>
             <title>{self.sanitize(self.title)}</title>
             <link>{BLOG_POST_URL_PATH + self.link}</link>
@@ -54,10 +57,11 @@ def create_rss():
     rss_items = ''.join(map(create_rss_item, blog_posts))
     rss_template = f"""
     <?xml version="1.0" encoding="UTF-8" ?>
-    <rss version="2.0">
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Andrew R. Porter blog posts</title>
         <link>https://www.andrewrporter.com</link>
+        <atom:link href="https://www.andrewrporter.com/rss.xml" rel="self" type="application/rss+xml" />
         <description>I am a remote Software Engineer at GitHub on the billing team. I enjoy writing web applications with Python and Next.js. I consider myself a lifetime learner and am currently diving into the world of Ruby.</description>
         {rss_items}
     </channel>
