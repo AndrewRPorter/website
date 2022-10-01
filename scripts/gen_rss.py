@@ -11,7 +11,7 @@ class BlogPost:
 
     def gen_rss_item(self):
         return f"""<item>
-            <title{self.title}</title>
+            <title>{self.title}</title>
             <link>{BLOG_POST_URL_PATH + self.link}</link>
             <description>{self.description}</description>
             </item>
