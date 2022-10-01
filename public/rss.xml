@@ -1,0 +1,35 @@
+
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+    <channel>
+        <title>Andrew R. Porter blog posts</title>
+        <link>https://www.andrewrporter.com</link>
+        <description>I am a remote Software Engineer at GitHub on the billing team. I enjoy writing web applications with Python and Next.js. I consider myself a lifetime learner and am currently diving into the world of Ruby.</description>
+        <item>
+            <titlemkdir blog && touch blog/hello_blog.md</title>
+            <link>https://www.andrewrporter.com/blog/hello_blog</link>
+            <description>My initial blog post to show the date that my blog was first created with some info on what you can expect to see here.</description>
+            </item>
+        <item>
+        <item>
+            <titleNext.js Google Analytics</title>
+            <link>https://www.andrewrporter.com/blog/nextjs_analytics</link>
+            <description>Basic tutorial showing you how to utilize Google Analytics in Next.js.</description>
+            </item>
+        <item>
+        <item>
+            <titleIdentifying potential shell aliases</title>
+            <link>https://www.andrewrporter.com/blog/identify_potential_aliases</link>
+            <description>Identify potential aliases by analyzing your systems command history (ZSH in this case).</description>
+            </item>
+        <item>
+        <item>
+            <titleKeyword Extraction in Python via RAKE</title>
+            <link>https://www.andrewrporter.com/blog/python_keyword_extraction</link>
+            <description>Keyword extraction in Python via RAKE (Rapid Automatic Keyword Extraction).</description>
+            </item>
+        <item>
+        
+    </channel>
+    </rss>
+    
