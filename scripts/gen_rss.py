@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 BLOG_POST_DIR = "markdown/blog"
 BLOG_POST_URL_PATH = "https://www.andrewrporter.com/blog/"
@@ -8,15 +9,19 @@ class BlogPost:
     title = ""
     link = ""
     description = ""
+    date = ""
 
     def sanitize(self, value):
         return value.replace("&", "&amp;")
 
     def gen_rss_item(self):
+        formatted_date = datetime.strptime(self.date, "%Y-%M-%d")
         return f"""<item>
             <title>{self.sanitize(self.title)}</title>
             <link>{BLOG_POST_URL_PATH + self.link}</link>
             <description>{self.sanitize(self.description)}</description>
+            <guid>{BLOG_POST_URL_PATH + self.link}</guid>
+            <pubDate>{formatted_date}</pubDate>
         </item>
         """
 
@@ -35,7 +40,9 @@ def create_blog_post(blog_post_path: str):
                 blog_post.link = " ".join(line.split(" ")[1:]).strip()
             elif line.startswith("description: "):
                 blog_post.description = " ".join(line.split(" ")[1:]).strip()
-    
+            elif line.startswith("datePublished: "):
+                blog_post.date = " ".join(line.split(" ")[2:]).strip()
+
     return blog_post
 
 def create_rss():
