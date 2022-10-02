@@ -108,13 +108,15 @@ const components = {
     />
   ),
   a: (props: LinkProps) => (
-    <Link
-      fontSize="md"
-      color="blue.600"
-      _dark={{ color: 'gray.300' }}
-      textDecoration="underline"
-      {...props}
-    />
+    <NextLink href={props.href ? props.href : ''} passHref>
+      <Link
+        fontSize="md"
+        color="blue.600"
+        _dark={{ color: 'gray.300' }}
+        textDecoration="underline"
+        {...props}
+      />
+    </NextLink>
   ),
   code: (props: BoxProps) => (
     <Box m="16px" p="16px" borderRadius="8px" overflowX="auto" {...props} />
