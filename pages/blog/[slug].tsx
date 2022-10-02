@@ -18,6 +18,7 @@ type Props = {
     seoTitle: string
     description: string
     path: string
+    ogImagePath: string
     datePublished: string
   }
 }

@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode
   seoTitle?: string
   description?: string
-  ogImage?: string
+  ogImagePath?: string
 }
 
 const DEFAULT_SEO_TITLE = 'Andrew Porter - Software Engineer'
@@ -21,7 +21,7 @@ export default function Layout(props: Props) {
         <meta charSet="utf-8"></meta>
         <meta
           property="og:image"
-          content={props.ogImage ? props.ogImage : DEFAULT_OG_IMAGE}
+          content={props.ogImagePath ? props.ogImagePath : DEFAULT_OG_IMAGE}
         />
         <meta
           name="viewport"

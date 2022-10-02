@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next'
 import path from 'path'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Box,
   Text,
@@ -16,11 +17,14 @@ import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import Layout from '@/components/layout'
 import { useRouter } from 'next/router'
 
+// TODO: create shared props for these front matter values
 type Props = {
   allContent: {
     title: string
     description: string
     datePublished: string
+    ogImagePath: string
+    ogImageAlt: string
     path: string
   }[]
 }
@@ -72,21 +76,38 @@ export default function Blog(props: Props) {
               <Box p="16px">
                 <Divider />
               </Box>
-              <Box py="16px">
-                <Heading as="h2" fontSize="2xl">
-                  {content.title}
-                </Heading>
-                <Text>{content.description}</Text>
-                <Text>{formatDate(content.datePublished)}</Text>
-                <Link href={`/blog/${content.path}`}>
-                  <Text
-                    color={textColor}
-                    textDecoration="underline"
-                    _hover={{ cursor: 'pointer' }}
-                  >
-                    Read More
-                  </Text>
-                </Link>
+
+              <Box
+                display="flex"
+                alignItems={content.ogImagePath ? 'center' : 'start'}
+              >
+                {content.ogImagePath && (
+                  <Box pr={4}>
+                    <Image
+                      src={content.ogImagePath}
+                      width="100px"
+                      height="100px"
+                      layout="fixed"
+                      alt={content.ogImageAlt}
+                    />
+                  </Box>
+                )}
+                <Box py="16px">
+                  <Heading as="h2" fontSize="2xl">
+                    {content.title}
+                  </Heading>
+                  <Text>{content.description}</Text>
+                  <Text>{formatDate(content.datePublished)}</Text>
+                  <Link href={`/blog/${content.path}`}>
+                    <Text
+                      color={textColor}
+                      textDecoration="underline"
+                      _hover={{ cursor: 'pointer' }}
+                    >
+                      Read More
+                    </Text>
+                  </Link>
+                </Box>
               </Box>
             </Box>
           )
