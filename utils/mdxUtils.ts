@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
-import { SerializeOptions } from 'next-mdx-remote/dist/types'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types'
 import { MARKDOWN_PATH } from '@/utils/constants'
 
 /**
@@ -11,7 +11,7 @@ import { MARKDOWN_PATH } from '@/utils/constants'
  */
 export const getMDXDataFromFileName = async (
   fileName: string
-): Promise<SerializeOptions> => {
+): Promise<MDXRemoteSerializeResult> => {
   const markdownFileName = fileName.replace('.js', '.md')
   const markdownFilePath = path.join(MARKDOWN_PATH, markdownFileName)
   const source = fs.readFileSync(markdownFilePath)

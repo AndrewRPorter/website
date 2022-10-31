@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Image, { ImageProps } from 'next/image'
 import NextLink from 'next/link'
 import { MDXRemote } from 'next-mdx-remote'
@@ -24,7 +25,7 @@ import {
  *
  * See more info on this here: https://github.com/chakra-ui/chakra-ui/discussions/4177.
  */
-const components = {
+const components: Record<string, React.ReactNode> = {
   h1: ({ id, ...props }: HeadingProps) =>
     id ? (
       <Link href={`#${id}`}>
@@ -148,6 +149,12 @@ const components = {
   )
 }
 
-export default function MDXWrapper(props: any) {
-  return <MDXRemote {...props} components={components} />
+interface Props {
+  compiledSource: string
+}
+
+export default function MDXWrapper(props: Props) {
+  return (
+    <MDXRemote compiledSource={props.compiledSource} components={components} />
+  )
 }

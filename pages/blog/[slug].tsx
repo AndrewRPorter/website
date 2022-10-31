@@ -10,9 +10,10 @@ import MDXWrapper from '@/components/mdx-wrapper'
 import BlogMetaData from '@/components/blog/blog_meta_data'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import rehypeSlug from 'rehype-slug'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types'
 
 type Props = {
-  source: any
+  source: MDXRemoteSerializeResult
   frontMatter: {
     title: string
     seoTitle: string
