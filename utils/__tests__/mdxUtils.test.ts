@@ -7,7 +7,7 @@ describe('mdxUtils', () => {
     const spy = jest.spyOn(fs, 'readFileSync')
     getMDXDataFromFileName('index.js')
     expect(spy).toHaveBeenCalledWith(
-      '/Users/andrew/dev/personal/personal_website/markdown/index.md'
+      expect.stringMatching(/markdown\/index.md/)
     )
   })
 })
