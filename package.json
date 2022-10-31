@@ -5,6 +5,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
+    "coverage": "jest --coverage",
     "gen_rss": "python3 scripts/gen_rss.py"
   },
   "dependencies": {
@@ -14,7 +17,7 @@
     "@emotion/styled": "^11.9.3",
     "framer-motion": "^6.4.1",
     "gray-matter": "^4.0.3",
-    "next": "latest",
+    "next": "12.2.1",
     "next-mdx-remote": "^3.0.8",
     "nextra": "^0.4.4",
     "nextra-theme-blog": "^0.1.5",
@@ -34,10 +37,14 @@
     "semi": false
   },
   "devDependencies": {
+    "jest": "^29.1.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "@types/node": "^18.7.15",
     "@types/react": "^18.0.15",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "jest-environment-jsdom": "^29.1.2",
     "typescript": "^4.7.4"
   }
 }
