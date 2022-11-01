@@ -8,7 +8,6 @@ import Layout from '@/components/layout'
 import rehypeHighlight from 'rehype-highlight'
 import MDXWrapper from '@/components/mdx-wrapper'
 import BlogMetaData from '@/components/blog/blog_meta_data'
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import rehypeSlug from 'rehype-slug'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types'
 
@@ -32,20 +31,10 @@ export default function BlogPost(props: Props) {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/night-owl.min.css"
       />
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink>{props.frontMatter.title}</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
       <BlogMetaData
         datePublished={props.frontMatter.datePublished}
         markdownContent={props.markdownContent}
+        pageTitle={props.frontMatter.title}
       />
       <MDXWrapper {...props.source} />
     </Layout>

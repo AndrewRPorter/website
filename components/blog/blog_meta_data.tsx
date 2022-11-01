@@ -1,10 +1,12 @@
 import { Text, Box } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { calculateReadingTime } from '@/utils/blogUtils'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 
 type Props = {
   datePublished: string
   markdownContent: string
+  pageTitle: string
 }
 
 const BlogMetaData = (props: Props) => {
@@ -24,10 +26,24 @@ const BlogMetaData = (props: Props) => {
   const readingTime = calculateReadingTime(props.markdownContent)
 
   return (
-    <Box pt={4}>
-      <Text fontSize="xs">
-        Posted on: {formattedDate} • {readingTime} minute read
-      </Text>
+    <Box>
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>{props.pageTitle}</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+
+      <Box pt={4}>
+        <Text fontSize="xs">
+          Posted on: {formattedDate} • {readingTime} minute read
+        </Text>
+      </Box>
     </Box>
   )
 }
