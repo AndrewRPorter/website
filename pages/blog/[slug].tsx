@@ -22,6 +22,7 @@ type Props = {
     ogImagePath: string
     datePublished: string
   }
+  markdownContent: string
 }
 
 export default function BlogPost(props: Props) {
@@ -42,7 +43,10 @@ export default function BlogPost(props: Props) {
           <BreadcrumbLink>{props.frontMatter.title}</BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
-      <BlogMetaData datePublished={props.frontMatter.datePublished} />
+      <BlogMetaData
+        datePublished={props.frontMatter.datePublished}
+        markdownContent={props.markdownContent}
+      />
       <MDXWrapper {...props.source} />
     </Layout>
   )
@@ -64,7 +68,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       source: mdxSource,
-      frontMatter: data
+      frontMatter: data,
+      markdownContent: source.toString()
     }
   }
 }

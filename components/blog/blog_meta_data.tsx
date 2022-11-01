@@ -1,8 +1,10 @@
 import { Text, Box } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import { calculateReadingTime } from '@/utils/blogUtils'
 
 type Props = {
   datePublished: string
+  markdownContent: string
 }
 
 const BlogMetaData = (props: Props) => {
@@ -19,9 +21,13 @@ const BlogMetaData = (props: Props) => {
     day: 'numeric'
   })
 
+  const readingTime = calculateReadingTime(props.markdownContent)
+
   return (
     <Box pt={4}>
-      <Text fontSize="xs">Posted on: {formattedDate}</Text>
+      <Text fontSize="xs">
+        Posted on: {formattedDate} • {readingTime} minute read
+      </Text>
     </Box>
   )
 }

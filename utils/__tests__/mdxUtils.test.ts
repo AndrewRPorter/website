@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import fs from 'fs'
 import { getMDXDataFromFileName } from '@/utils/mdxUtils'
 
