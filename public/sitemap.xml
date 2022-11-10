@@ -2,38 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.andrewrporter.com</loc>
-    <lastmod>2022-09-01T16:17:12.483614382Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1</priority>
   </url>
   <url>
     <loc>https://www.andrewrporter.com/blog</loc>
-    <lastmod>2022-09-01T16:17:12.483614382Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.andrewrporter.com/blog/hello_blog</loc>
-    <lastmod>2022-09-01T16:17:12.483614382Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.andrewrporter.com/blog/nextjs_analytics</loc>
-    <lastmod>2022-09-01T16:17:12.483614382Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.andrewrporter.com/blog/python_keyword_extraction</loc>
-    <lastmod>2022-09-01T16:17:12.483614382Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.andrewrporter.com/blog/identify_potential_aliases</loc>
-    <lastmod>2022-10-04T16:17:12.483614382Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
