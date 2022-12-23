@@ -109,7 +109,7 @@ const components: Record<string, React.ReactNode> = {
     />
   ),
   a: (props: LinkProps) => (
-    <NextLink href={props.href ? props.href : ''} passHref>
+    <NextLink href={props.href ? props.href : ''} passHref prefetch={false}>
       <Link
         fontSize="md"
         color="blue.600"
