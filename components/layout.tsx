@@ -1,7 +1,11 @@
 import Head from 'next/head'
-import Footer from '@/components/navigation/footer'
-import Header from '@/components/navigation/header'
+import dynamic from 'next/dynamic'
 import { Box, Container } from '@chakra-ui/react'
+import Header from '@/components/navigation/header'
+
+const DynamicFooter = dynamic(() => import('@/components/navigation/footer'), {
+  ssr: false
+})
 
 type Props = {
   children: React.ReactNode
@@ -46,7 +50,8 @@ export default function Layout(props: Props) {
             {props.children}
           </Container>
         </Box>
-        <Footer />
+        {/* Load footer dynamically to attempt to realize a perf gain  */}
+        <DynamicFooter />
       </Box>
     </>
   )

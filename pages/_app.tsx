@@ -1,15 +1,12 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import dynamic from 'next/dynamic'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import {
-  ChakraProvider,
-  extendTheme,
-  IconButton,
-  type ThemeConfig
-} from '@chakra-ui/react'
-import { ChevronUpIcon } from '@chakra-ui/icons'
+import { ChakraProvider, extendTheme, type ThemeConfig } from '@chakra-ui/react'
 import * as ga from '@/lib/ga'
+
+const TopOfPageButton = dynamic(() => import('@/components/top_of_page_button'))
 
 const config: ThemeConfig = {
   initialColorMode: 'system',
@@ -17,13 +14,12 @@ const config: ThemeConfig = {
 }
 
 export default function Application({ Component, pageProps }: AppProps) {
-  const [showScrollToTop, setShowScrollToTop] = useState(false)
-  const refScrollUp = useRef<HTMLDivElement>()
   const router = useRouter()
+  const refScrollUp = useRef<HTMLDivElement>()
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleVisibleButton)
-  })
+  const handleScrollUp = () => {
+    refScrollUp.current?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -40,19 +36,6 @@ export default function Application({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-
-  const handleVisibleButton = () => {
-    const position = window.pageYOffset
-    if (position > 100) {
-      return setShowScrollToTop(true)
-    } else if (position < 100) {
-      return setShowScrollToTop(false)
-    }
-  }
-
-  const handleScrollUp = () => {
-    refScrollUp?.current?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <>
@@ -75,18 +58,10 @@ export default function Application({ Component, pageProps }: AppProps) {
         }}
       />
       <ChakraProvider theme={extendTheme({ config })}>
-        {/* TODO: look into providing a custom hook to fix this type error: https://stackoverflow.com/a/64151312/8168077*/}
+        {/* TODO: look into providing a custom hook to fix this type error: https://stackoverflow.com/a/64151312/8168077.
+        This is why we case the type here. */}
         <div ref={refScrollUp as React.RefObject<HTMLDivElement>}></div>
-        {showScrollToTop && (
-          <IconButton
-            position="fixed"
-            bottom="8%"
-            right="8%"
-            onClick={handleScrollUp}
-            aria-label="Go to top of page"
-            icon={<ChevronUpIcon />}
-          />
-        )}
+        <TopOfPageButton scrollUp={handleScrollUp} />
         <Component {...pageProps} />
       </ChakraProvider>
     </>
