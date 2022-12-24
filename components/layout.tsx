@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import { Box, Container } from '@chakra-ui/react'
 import Header from '@/components/navigation/header'
+import { Box, Container } from '@chakra-ui/react'
 
 const DynamicFooter = dynamic(() => import('@/components/navigation/footer'), {
   ssr: false

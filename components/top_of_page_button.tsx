@@ -23,7 +23,6 @@ export default function TopOfPageButton(props: Props) {
 
   return (
     <>
-      {/* TODO: look into providing a custom hook to fix this type error: https://stackoverflow.com/a/64151312/8168077*/}
       {showScrollToTop && (
         <IconButton
           position="fixed"
