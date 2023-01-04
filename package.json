@@ -8,6 +8,7 @@
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "coverage": "jest --coverage",
+    "analyze": "ANALYZE=true next build",
     "gen_rss": "python3 scripts/gen_rss.py"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@next/bundle-analyzer": "^13.1.1",
     "@vercel/analytics": "^0.1.6",
     "framer-motion": "^6.4.1",
     "gray-matter": "^4.0.3",
