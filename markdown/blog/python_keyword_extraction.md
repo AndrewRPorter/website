@@ -20,7 +20,7 @@ There are several different libraries/methods that can perform keyword extractio
 
 RAKE is a novel method of automatically extracting keywords from documents created by researchers **much** smarter than me. Check out their paper [here](https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents).
 
-Thankfully, the open-source community has taken the approach described in this paper and created a wrapper extract keywords. We will be using the [rake-nltk](https://github.com/csurfer/rake-nltk) package to perform (note there are other python RAKE implementations but this one is PIP installable which I like).
+Thankfully, the open-source community has taken the approach described in this paper and created a class to extract keywords. We will be using the [rake-nltk](https://github.com/csurfer/rake-nltk) package in this tutorial. Note that there are other Python RAKE implementations but this one is PIP installable which I like.
 
 _Checkout [this](https://www.analyticsvidhya.com/blog/2022/01/four-of-the-easiest-and-most-effective-methods-of-keyword-extraction-from-a-single-text-using-python/) awesome blog post by [Ali Mansour](https://www.analyticsvidhya.com/blog/author/ali8445u/) if you want to see a comparison of other Python keyword extraction libraries._
 
