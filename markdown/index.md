@@ -6,4 +6,4 @@ When I'm not writing code, you can find me in the gym, snowboarding, or picking 
 
 I also have a [blog](/blog) where I talk about tech stuff.
 
-<img src="/me_rounded.webp" alt="Picture of me" width="186px" height="202px" />
+<img src="/me_rounded.webp" alt="Picture of me" width="186" height="202" />
