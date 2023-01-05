@@ -85,9 +85,8 @@ export default function Blog(props: Props) {
                   <Box pr={4}>
                     <Image
                       src={content.ogImagePath}
-                      width="100px"
-                      height="100px"
-                      layout="fixed"
+                      width={100}
+                      height={100}
                       alt={content.ogImageAlt}
                     />
                   </Box>

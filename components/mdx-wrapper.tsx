@@ -144,7 +144,7 @@ const components: Record<string, React.ReactNode> = {
   ),
   img: (props: ImageProps) => (
     <Box p="16px" display="flex" justifyContent="center" alignItems="center">
-      <Image alt="" {...props} layout="fixed" priority />
+      <Image alt="" {...props} priority />
     </Box>
   )
 }
