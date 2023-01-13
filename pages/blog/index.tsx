@@ -39,8 +39,6 @@ export default function Blog(props: Props) {
     return parsedCurrentDate > parsedCompareDate ? -1 : 1
   })
 
-  const textColor = useColorModeValue('blue.600', 'blue.300')
-
   /**
    * Parses and formats an input date string from grey-matter
    *
@@ -49,7 +47,6 @@ export default function Blog(props: Props) {
    */
   const formatDate = (date: string): string => {
     return new Date(Date.parse(date)).toLocaleDateString(locale, {
-      weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -92,18 +89,18 @@ export default function Blog(props: Props) {
                   </Box>
                 )}
                 <Box py="16px">
+                <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.300')}>{formatDate(content.datePublished)} by Andrew Porter</Text>
                   <Heading as="h2" fontSize="2xl">
                     {content.title}
                   </Heading>
                   <Text>{content.description}</Text>
-                  <Text>{formatDate(content.datePublished)}</Text>
                   <Link href={`/blog/${content.path}`}>
                     <Text
-                      color={textColor}
+                      color={useColorModeValue('blue.600', 'blue.300')}
                       textDecoration="underline"
                       _hover={{ cursor: 'pointer' }}
                     >
-                      Read More
+                      Read more
                     </Text>
                   </Link>
                 </Box>
