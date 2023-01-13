@@ -33,6 +33,9 @@ export default function Blog(props: Props) {
   const router = useRouter()
   const locale = router.locale
 
+  const linkColor = useColorModeValue('blue.600', 'blue.300')
+  const mutedTextColor = useColorModeValue('gray.600', 'gray.300')
+
   const sortedContent = props.allContent.sort((curr, compare) => {
     const parsedCurrentDate = Date.parse(curr.datePublished)
     const parsedCompareDate = Date.parse(compare.datePublished)
@@ -89,14 +92,14 @@ export default function Blog(props: Props) {
                   </Box>
                 )}
                 <Box py="16px">
-                <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.300')}>{formatDate(content.datePublished)} by Andrew Porter</Text>
+                  <Text fontSize="sm" color={mutedTextColor}>{formatDate(content.datePublished)} by Andrew Porter</Text>
                   <Heading as="h2" fontSize="2xl">
                     {content.title}
                   </Heading>
                   <Text>{content.description}</Text>
                   <Link href={`/blog/${content.path}`}>
                     <Text
-                      color={useColorModeValue('blue.600', 'blue.300')}
+                      color={linkColor}
                       textDecoration="underline"
                       _hover={{ cursor: 'pointer' }}
                     >
@@ -114,6 +117,7 @@ export default function Blog(props: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  // TODO: can we get locale in here?
   const allContent = blogPostFilePaths.map((filePath) => {
     const blogPostFilePath = path.join(BLOG_POST_PATH, filePath)
     const { data } = getDataFromFilePath(blogPostFilePath)
