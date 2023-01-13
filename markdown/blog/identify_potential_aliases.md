@@ -3,8 +3,6 @@ title: Identifying potential shell aliases
 path: identify_potential_aliases
 seoTitle: Identifying potential shell aliases
 description: Identify potential aliases by analyzing your systems command history (ZSH in this case).
-ogImagePath: /img/bundled_code.jpg
-ogImageAlt: Picture of bundled/minified code
 datePublished: !!str 2022-09-24
 ---
 
