@@ -8,9 +8,16 @@
         <item>
             <title>mkdir blog &amp;&amp; touch blog/hello_blog.md</title>
             <link>https://www.andrewrporter.com/blog/hello_blog</link>
-            <description>My initial blog post to show the date that my blog was first created with some info on what you can expect to see here.</description>
+            <description>Andrew Porter's initial development blog post to show the date the blog was created.</description>
             <guid>https://www.andrewrporter.com/blog/hello_blog</guid>
             <pubDate>Wed, 17 Nov 2021 00:00:00 EST</pubDate>
+        </item>
+        <item>
+            <title>My thoughts on remote work as a software engineer who graduated during the pandemic</title>
+            <link>https://www.andrewrporter.com/blog/thoughts_on_remote_work</link>
+            <description>I've been working remotely as a software engineer at "big" tech companies since I graduated college in 2020 with little to no traditional office experience. Here are some of my thoughts on remote work.</description>
+            <guid>https://www.andrewrporter.com/blog/thoughts_on_remote_work</guid>
+            <pubDate>Fri, 13 Jan 2023 00:00:00 EST</pubDate>
         </item>
         <item>
             <title>Next.js Google Analytics</title>

@@ -23,4 +23,8 @@
     <loc>https://www.andrewrporter.com/blog/identify_potential_aliases</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.andrewrporter.com/blog/thoughts_on_remote_work</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
