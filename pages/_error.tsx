@@ -1,5 +1,6 @@
 import { Box, Text, Heading } from '@chakra-ui/react'
 import Layout from '@/components/layout'
+import { NextPageContext } from 'next'
 
 interface Props {
   statusCode: number
@@ -18,7 +19,7 @@ export default function Error({ statusCode }: Props) {
   )
 }
 
-Error.getInitialProps = ({ res, err }) => {
+Error.getInitialProps = ({ res, err }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
   return { statusCode }
 }

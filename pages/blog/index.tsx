@@ -92,7 +92,9 @@ export default function Blog(props: Props) {
                   </Box>
                 )}
                 <Box py="16px">
-                  <Text fontSize="sm" color={mutedTextColor}>{formatDate(content.datePublished)} by Andrew Porter</Text>
+                  <Text fontSize="sm" color={mutedTextColor}>
+                    {formatDate(content.datePublished)} by Andrew Porter
+                  </Text>
                   <Heading as="h2" fontSize="2xl">
                     {content.title}
                   </Heading>
