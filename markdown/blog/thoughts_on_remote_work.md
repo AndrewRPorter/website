@@ -14,15 +14,15 @@ I wanted to share my thoughts on remote work as a way to reflect on the past ~3 
 
 ## Thoughts
 
-The below topics are my thoughts and opinions on remote work in no particular order.
+Below is a list of my thoughts and opinions on remote work in no particular order.
 
 ---
 
 ### No more commute
 
-My previous commute to work was ~30 minutes each way. This saves me about 5 hours a week or 260 hours a year! I have since re-invested this time into fitness.
+My previous commute to work was ~30 minutes each way. This saves me about 5 hours a week or 260 hours a year! I now have more time in my day to do things like work out, cook a big dinner or just sit down and relax.
 
-### Home kitchen at my disposal
+### Kitchen at my disposal
 
 This has been great for my fitness goals but I often find it a distraction as I tend to do dishes, clean, etc. during the work day.
 
@@ -32,7 +32,7 @@ I often wonder if I am working too much or too little. In an office environment 
 
 ### Harder to make friends at work
 
-This might just be a me problem. It seems harder to form true bonds in a remote environment. But, at the end of the day, some people are just at work to work and NOT to make friends.
+This might just be a me problem. It seems harder to form true bonds in a remote environment. But, at the end of the day, some people are just at work to work and NOT to make friends. I find that pairing with teammates on issues or just hosting office hours is a great way to meet people at work.
 
 ### Timezones can be a pain in the ass
 
@@ -44,6 +44,10 @@ This might not be the case for every remote position but my company is remote fi
 
 ### Meetings can be awkward at times
 
-Everyone is muted for long periods of times at the beginning of meetings. You'll here the typical, "how was your weekend" or suggestions to listen to music for ~5 minutes at the start of the meeting.
+Everyone is muted for long periods of times at the beginning of meetings. You'll hear the typical, "How was your weekend?" or suggestions to listen to music for ~5 minutes at the start of the meeting.
 
-Don't get me started on ice breakers. You can only do so many ice breakers people...
+It can also be hard to actually end meetings. Who says "bye" first? Do I need to stick around after the fact? Is now a good time to go? At my previous company, we solved this by all clapping at the end of a meeting and racing to leave the call.
+
+### Hard to separate home and work
+
+I sometimes find it hard to separate my home environment from my work environment. I've since dealt with this by setting hard stops and periods where I will not work. These are mainly lunch, weekends and after my 8 hours are done for the day. Just because I work from home does not mean I need to make my home my place of work.
