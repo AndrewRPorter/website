@@ -51,3 +51,7 @@ It can also be hard to actually end meetings. Who says "bye" first? Do I need to
 ### Hard to separate home and work
 
 I sometimes find it hard to separate my home environment from my work environment. I've since dealt with this by setting hard stops and periods where I will not work. These are mainly lunch, weekends and after my 8 hours are done for the day. Just because I work from home does not mean I need to make my home my place of work.
+
+### Very little "whiteboarding"
+
+[Whiteboarding](https://www.wikiwand.com/en/Whiteboarding) is typically a way to pair on solving a problem with peers. This is something I did a lot of in college but have hardly done any in the "real world". Is this just a culture issue at my company or do people not find this useful anymore. I imagine this would feel a lot more natural in an office with a physical whiteboard. Instead, we are forced to use over-engineered tools like Jamboard or Figma.
