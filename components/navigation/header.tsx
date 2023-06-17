@@ -1,29 +1,22 @@
-import {
-  Box,
-  Flex,
-  IconButton,
-  Button,
-  useColorModeValue,
-  Stack,
-  useColorMode
-} from '@chakra-ui/react'
+import { Box, Flex, IconButton, Stack, useColorMode } from '@chakra-ui/react'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import { FaHome } from 'react-icons/fa'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box as="header">
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box px={16} py={8}>
         <Flex h={16} alignItems="center" justifyContent="space-between">
-          <Box>
-            <Link href="/" passHref>
-              <Button as="a" leftIcon={<FaHome />} aria-label="Go Home">
-                Home
-              </Button>
-            </Link>
-          </Box>
+          <Link href="/" passHref>
+            <Image
+              src="/programmer_icon.png"
+              width={75}
+              height={75}
+              alt="programmer icon representing myself"
+            />
+          </Link>
 
           <Flex alignItems="center">
             <Stack direction="row" spacing={7}>
@@ -34,7 +27,10 @@ export default function Header() {
                     ? 'Switch to dark mode'
                     : 'Switch to light mode'
                 }
+                background="none"
+                _hover={{ background: 'none' }}
                 icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                size="lg"
               />
             </Stack>
           </Flex>
