@@ -50,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return data
   })
 
-  const rss = generateRSS(allContent)
+  const rss = generateRSS(allContent as DataInterface[])
 
   context.res.setHeader('Content-Type', 'text/xml')
   context.res.write(rss)
