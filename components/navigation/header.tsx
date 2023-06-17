@@ -7,7 +7,7 @@ export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box as="header">
-      <Box px={16} py={8}>
+      <Box px={{ base: 8, md: 16 }} py={8}>
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <Link href="/" passHref>
             <Image
@@ -15,6 +15,7 @@ export default function Header() {
               width={75}
               height={75}
               alt="programmer icon representing myself"
+              priority
             />
           </Link>
 
