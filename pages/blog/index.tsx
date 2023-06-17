@@ -16,17 +16,10 @@ import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import Layout from '@/components/layout'
 import { useRouter } from 'next/router'
+import { MarkdownDataInterface } from '@/utils/types'
 
-// TODO: create shared props for these front matter values
 type Props = {
-  allContent: {
-    title: string
-    description: string
-    datePublished: string
-    ogImagePath: string
-    ogImageAlt: string
-    path: string
-  }[]
+  allContent: MarkdownDataInterface[]
 }
 
 export default function Blog(props: Props) {

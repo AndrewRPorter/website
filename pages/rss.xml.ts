@@ -3,17 +3,9 @@ import path from 'path'
 
 import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
+import { MarkdownDataInterface } from '@/utils/types'
 
-interface DataInterface {
-  title: string
-  description: string
-  datePublished: string
-  ogImagePath: string
-  ogImageAlt: string
-  path: string
-}
-
-function generateRSS(fileData: DataInterface[]) {
+function generateRSS(fileData: MarkdownDataInterface[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
@@ -50,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return data
   })
 
-  const rss = generateRSS(allContent as DataInterface[])
+  const rss = generateRSS(allContent as MarkdownDataInterface[])
 
   context.res.setHeader('Content-Type', 'text/xml')
   context.res.write(rss)
