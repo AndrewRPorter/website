@@ -9,13 +9,3 @@ View the website at [https://www.andrewrporter.com](https://www.andrewrporter.co
 ```
 yarn dev
 ```
-
-## Syncing RSS Feed
-
-The website has an RSS feed of all the blog posts: https://www.andrewrporter.com/rss.xml.
-
-After creating a new blog post we can create a new RSS feed entry with:
-
-```
-yarn gen_rss
-```
