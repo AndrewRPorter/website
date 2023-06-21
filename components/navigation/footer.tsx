@@ -5,7 +5,8 @@ import {
   Text,
   useColorModeValue,
   Button,
-  Link as ChakraLink
+  Link as ChakraLink,
+  IconButton
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FaGithub, FaLinkedin, FaRss } from 'react-icons/fa'
@@ -72,30 +73,33 @@ export default function Footer() {
           justify="center"
           align="center"
         >
-          <Button
+          <IconButton
             as="a"
             href="https://github.com/AndrewRPorter"
             aria-label="GitHub"
             target="_blank"
-          >
-            <FaGithub />
-          </Button>
-          <Button
+            background="none"
+            icon={<FaGithub />}
+            size="lg"
+          />
+          <IconButton
             as="a"
             href="https://www.linkedin.com/in/andrew-porter"
             aria-label="LinkedIn"
             target="_blank"
-          >
-            <FaLinkedin />
-          </Button>
-          <Button
+            background="none"
+            icon={<FaLinkedin />}
+            size="lg"
+          />
+          <IconButton
             as="a"
             href="/rss.xml"
             aria-label="RSS feed"
             target="_blank"
-          >
-            <FaRss />
-          </Button>
+            background="none"
+            icon={<FaRss />}
+            size="lg"
+          />
         </Container>
 
         <Container as={Stack} maxW="6xl" py={4} spacing={4}>

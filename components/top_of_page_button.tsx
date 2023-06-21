@@ -1,6 +1,7 @@
 import { ChevronUpIcon } from '@chakra-ui/icons'
 import { useState, useEffect, useRef } from 'react'
 import { IconButton } from '@chakra-ui/react'
+import { FaChevronUp } from 'react-icons/fa'
 
 interface Props {
   scrollUp: () => void
@@ -30,7 +31,9 @@ export default function TopOfPageButton(props: Props) {
           right="8%"
           onClick={props.scrollUp}
           aria-label="Go to top of page"
-          icon={<ChevronUpIcon />}
+          icon={<FaChevronUp />}
+          size="lg"
+          background="none"
         />
       )}
     </>
