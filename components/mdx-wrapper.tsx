@@ -35,6 +35,7 @@ const components: Record<string, React.ReactNode> = {
             size="2xl"
             p="16px"
             color="brand.600"
+            textAlign="center"
             _dark={{ color: 'gray.300' }}
             {...props}
           />
@@ -44,6 +45,7 @@ const components: Record<string, React.ReactNode> = {
       <Heading
         as="h1"
         size="2xl"
+        textAlign="center"
         p="16px"
         color="brand.600"
         _dark={{ color: 'gray.300' }}

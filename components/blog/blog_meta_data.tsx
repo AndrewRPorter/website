@@ -40,7 +40,7 @@ const BlogMetaData = (props: Props) => {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <Box pt={4}>
+      <Box pt={3}>
         <Text fontSize="xs">
           Posted on: {formattedDate} • {readingTime} minute read
         </Text>
