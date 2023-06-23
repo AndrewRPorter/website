@@ -46,7 +46,7 @@ export default function Layout(props: Props) {
       <Box>
         <Header />
         <Box as="main">
-          <Container py={8} maxWidth="4xl">
+          <Container py={3} maxWidth="4xl">
             {props.children}
           </Container>
         </Box>

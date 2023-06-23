@@ -12,6 +12,7 @@ type Props = {
 const BlogMetaData = (props: Props) => {
   const router = useRouter()
   const locale = router.locale
+
   // TODO: create shared date formatter so we have consistent dates here with the dates on the
   // blog index page. Or, we can pass around formatted dates.
   const formattedDate = new Date(
@@ -35,7 +36,7 @@ const BlogMetaData = (props: Props) => {
           <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink>{props.pageTitle}</BreadcrumbLink>
+          <BreadcrumbLink>Current Post</BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
 

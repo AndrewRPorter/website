@@ -20,55 +20,6 @@ export default function Footer() {
           maxW="6xl"
           py={4}
           spacing={4}
-          justify="center"
-          align="center"
-        >
-          <Stack direction="row" spacing={10}>
-            <Link href="/" passHref>
-              <Text
-                color={useColorModeValue('brand.600', 'gray.300')}
-                textDecoration="underline"
-                _hover={{
-                  cursor: 'pointer'
-                }}
-              >
-                Home
-              </Text>
-            </Link>
-            <Link href="/blog" passHref>
-              <Text
-                color={useColorModeValue('brand.600', 'gray.300')}
-                textDecoration="underline"
-                _hover={{
-                  cursor: 'pointer'
-                }}
-              >
-                Blog
-              </Text>
-            </Link>
-
-            <ChakraLink
-              href="https://github.com/AndrewRPorter/website"
-              target="_blank"
-            >
-              <Text
-                textDecoration="underline"
-                color={useColorModeValue('brand.600', 'gray.300')}
-                _hover={{
-                  cursor: 'pointer'
-                }}
-              >
-                Source
-              </Text>
-            </ChakraLink>
-          </Stack>
-        </Container>
-
-        <Container
-          as={Stack}
-          maxW="6xl"
-          py={4}
-          spacing={4}
           direction="row"
           justify="center"
           align="center"
@@ -81,6 +32,8 @@ export default function Footer() {
             background="none"
             icon={<FaGithub />}
             size="lg"
+            color={useColorModeValue("gray.600", "white")}
+            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
           />
           <IconButton
             as="a"
@@ -90,6 +43,8 @@ export default function Footer() {
             background="none"
             icon={<FaLinkedin />}
             size="lg"
+            color={useColorModeValue("gray.600", "white")}
+            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
           />
           <IconButton
             as="a"
@@ -99,6 +54,8 @@ export default function Footer() {
             background="none"
             icon={<FaRss />}
             size="lg"
+            color={useColorModeValue("gray.600", "white")}
+            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
           />
         </Container>
 
