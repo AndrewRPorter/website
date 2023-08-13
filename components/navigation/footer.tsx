@@ -5,7 +5,8 @@ import {
   Text,
   useColorModeValue,
   Button,
-  Link as ChakraLink
+  Link as ChakraLink,
+  IconButton
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FaGithub, FaLinkedin, FaRss } from 'react-icons/fa'
@@ -19,83 +20,43 @@ export default function Footer() {
           maxW="6xl"
           py={4}
           spacing={4}
-          justify="center"
-          align="center"
-        >
-          <Stack direction="row" spacing={10}>
-            <Link href="/" passHref>
-              <Text
-                color={useColorModeValue('brand.600', 'gray.300')}
-                textDecoration="underline"
-                _hover={{
-                  cursor: 'pointer'
-                }}
-              >
-                Home
-              </Text>
-            </Link>
-            <Link href="/blog" passHref>
-              <Text
-                color={useColorModeValue('brand.600', 'gray.300')}
-                textDecoration="underline"
-                _hover={{
-                  cursor: 'pointer'
-                }}
-              >
-                Blog
-              </Text>
-            </Link>
-
-            <ChakraLink
-              href="https://github.com/AndrewRPorter/website"
-              target="_blank"
-            >
-              <Text
-                textDecoration="underline"
-                color={useColorModeValue('brand.600', 'gray.300')}
-                _hover={{
-                  cursor: 'pointer'
-                }}
-              >
-                Source
-              </Text>
-            </ChakraLink>
-          </Stack>
-        </Container>
-
-        <Container
-          as={Stack}
-          maxW="6xl"
-          py={4}
-          spacing={4}
           direction="row"
           justify="center"
           align="center"
         >
-          <Button
+          <IconButton
             as="a"
             href="https://github.com/AndrewRPorter"
             aria-label="GitHub"
             target="_blank"
-          >
-            <FaGithub />
-          </Button>
-          <Button
+            background="none"
+            icon={<FaGithub />}
+            size="lg"
+            color={useColorModeValue("gray.600", "white")}
+            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
+          />
+          <IconButton
             as="a"
             href="https://www.linkedin.com/in/andrew-porter"
             aria-label="LinkedIn"
             target="_blank"
-          >
-            <FaLinkedin />
-          </Button>
-          <Button
+            background="none"
+            icon={<FaLinkedin />}
+            size="lg"
+            color={useColorModeValue("gray.600", "white")}
+            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
+          />
+          <IconButton
             as="a"
             href="/rss.xml"
             aria-label="RSS feed"
             target="_blank"
-          >
-            <FaRss />
-          </Button>
+            background="none"
+            icon={<FaRss />}
+            size="lg"
+            color={useColorModeValue("gray.600", "white")}
+            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
+          />
         </Container>
 
         <Container as={Stack} maxW="6xl" py={4} spacing={4}>

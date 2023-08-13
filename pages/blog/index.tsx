@@ -6,7 +6,6 @@ import {
   Box,
   Text,
   Heading,
-  Divider,
   useColorModeValue,
   Breadcrumb,
   BreadcrumbItem,
@@ -15,6 +14,7 @@ import {
 import { blogPostFilePaths, BLOG_POST_PATH } from '@/utils/constants'
 import { getDataFromFilePath } from '@/utils/grayMatterUtils'
 import Layout from '@/components/layout'
+import {ArrowForwardIcon} from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 import { MarkdownDataInterface } from '@/utils/types'
 
@@ -59,17 +59,13 @@ export default function Blog(props: Props) {
           <BreadcrumbLink>Blog</BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
-      <Box p="16px">
-        <Heading as="h1" fontSize="4xl" py="16px">
+      <Box p={4}>
+        <Heading as="h1" fontSize="4xl" py="16px" textAlign="center">
           Blog Posts
         </Heading>
         {sortedContent.map((content) => {
           return (
             <Box key={content.title}>
-              <Box p="16px">
-                <Divider />
-              </Box>
-
               <Box
                 display="flex"
                 alignItems={content.ogImagePath ? 'center' : 'start'}
@@ -84,21 +80,23 @@ export default function Blog(props: Props) {
                     />
                   </Box>
                 )}
-                <Box py="16px">
-                  <Text fontSize="sm" color={mutedTextColor}>
-                    {formatDate(content.datePublished)} by Andrew Porter
-                  </Text>
+                <Box py="16px" display="flex" flexDirection="column" gap={3}>
                   <Heading as="h2" fontSize="2xl">
                     {content.title}
                   </Heading>
+                  <Text fontSize="sm" color={mutedTextColor}>
+                    {formatDate(content.datePublished)} by Andrew Porter
+                  </Text>
                   <Text>{content.description}</Text>
                   <Link href={`/blog/${content.path}`}>
                     <Text
                       color={linkColor}
+                      fontSize="lg"
+                      fontWeight="bold"
                       textDecoration="underline"
                       _hover={{ cursor: 'pointer' }}
                     >
-                      Read more
+                      Read more <ArrowForwardIcon />
                     </Text>
                   </Link>
                 </Box>
