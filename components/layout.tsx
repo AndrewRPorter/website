@@ -23,10 +23,7 @@ export default function Layout(props: Props) {
     <>
       <Head>
         <meta charSet="utf-8"></meta>
-        <meta
-          property="og:image"
-          content={props.ogImagePath ? props.ogImagePath : DEFAULT_OG_IMAGE}
-        />
+        <meta name="author" content="Andrew Porter" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5"
@@ -37,10 +34,16 @@ export default function Layout(props: Props) {
             props.description ? props.description : DEFAULT_SEO_DESCRIPTION
           }
         ></meta>
+
+        <meta
+          property="og:image"
+          content={props.ogImagePath ? props.ogImagePath : DEFAULT_OG_IMAGE}
+        />
         <meta
           property="og:title"
           content={props.seoTitle ? props.seoTitle : DEFAULT_SEO_TITLE}
         />
+
         <title>{props.seoTitle ? props.seoTitle : DEFAULT_SEO_TITLE}</title>
       </Head>
       <Box>
