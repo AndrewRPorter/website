@@ -20,6 +20,7 @@ type Props = {
     path: string
     ogImagePath: string
     datePublished: string
+    keywords: string[]
   }
   markdownContent: string
 }

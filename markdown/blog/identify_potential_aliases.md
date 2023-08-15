@@ -4,6 +4,7 @@ path: identify_potential_aliases
 seoTitle: Identifying potential shell aliases
 description: Identify potential aliases by analyzing your systems command history (ZSH in this case).
 datePublished: !!str 2022-09-24
+keywords: ["shell aliases", "finding shell aliases", "ZSH aliases"]
 ---
 
 # Identifying potential shell aliases

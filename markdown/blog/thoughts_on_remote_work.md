@@ -4,6 +4,7 @@ path: thoughts_on_remote_work
 seoTitle: Thoughts on remote work as a software engineer who graduated during the pandemic
 description: I've been working remotely as a software engineer at "big" tech companies since I graduated college in 2020 with little to no traditional office experience. Here are some of my thoughts on remote work.
 datePublished: !!str 2023-01-13
+keywords: ["remote work", "work from home",  "remote software development", "remote software engineering"]
 ---
 
 # My thoughts on remote work

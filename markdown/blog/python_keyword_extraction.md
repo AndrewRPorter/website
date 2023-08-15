@@ -4,6 +4,7 @@ path: python_keyword_extraction
 seoTitle: Keyword Extraction in Python via RAKE - Andrew R. Porter
 description: Keyword extraction in Python via RAKE (Rapid Automatic Keyword Extraction).
 datePublished: !!str 2022-08-30
+keywords: [keyword extraction, python keyword extraction, RAKE tutorial, python RAKE]
 ---
 
 # Keyword Extraction in Python via RAKE
