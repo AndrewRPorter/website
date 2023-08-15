@@ -12,29 +12,41 @@ type Props = {
   seoTitle?: string
   description?: string
   ogImagePath?: string
+  keywords?: string[]
 }
 
 const DEFAULT_SEO_TITLE = 'Andrew Porter - Software Engineer'
 const DEFAULT_SEO_DESCRIPTION = "Andrew Porter's personal website and blog."
 const DEFAULT_OG_IMAGE = '/programmer_icon.png'
+const DEFAULT_KEYWORDS = [
+  'Andrew Porter',
+  "Andrew Porter Blog",
+  'Andrew Porter Software Engineer',
+  'Andrew Porter Software Developer',
+  "Software Development Blog",
+  "Software Engineering Blog"
+]
 
 export default function Layout(props: Props) {
+  const keywords = props.keywords ? props.keywords : DEFAULT_KEYWORDS
+
   return (
     <>
       <Head>
-        <meta charSet="utf-8"></meta>
+        <title>{props.seoTitle ? props.seoTitle : DEFAULT_SEO_TITLE}</title>
+
+        <meta charSet="utf-8" />
         <meta name="author" content="Andrew Porter" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5"
-        ></meta>
+        />
         <meta
           name="description"
           content={
             props.description ? props.description : DEFAULT_SEO_DESCRIPTION
           }
-        ></meta>
-
+        />
         <meta
           property="og:image"
           content={props.ogImagePath ? props.ogImagePath : DEFAULT_OG_IMAGE}
@@ -43,8 +55,7 @@ export default function Layout(props: Props) {
           property="og:title"
           content={props.seoTitle ? props.seoTitle : DEFAULT_SEO_TITLE}
         />
-
-        <title>{props.seoTitle ? props.seoTitle : DEFAULT_SEO_TITLE}</title>
+          <meta name="keywords" content={keywords.join(', ')} />
       </Head>
       <Box>
         <Header />
