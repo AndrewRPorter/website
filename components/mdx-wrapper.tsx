@@ -29,7 +29,6 @@ const components: Record<string, React.ReactNode> = {
   h1: ({ id, ...props }: HeadingProps) =>
     id ? (
       <Link href={`#${id}`}>
-        <NextLink href={`#${id}`}>
           <Heading
             as="h1"
             size="2xl"
@@ -39,7 +38,6 @@ const components: Record<string, React.ReactNode> = {
             _dark={{ color: 'gray.300' }}
             {...props}
           />
-        </NextLink>
       </Link>
     ) : (
       <Heading
@@ -54,8 +52,7 @@ const components: Record<string, React.ReactNode> = {
     ),
   h2: ({ id, ...props }: HeadingProps) =>
     id ? (
-      <Link href={`#${id}`}>
-        <NextLink href={`#${id}`}>
+        <Link href={`#${id}`}>
           <Heading
             as="h2"
             size="xl"
@@ -65,8 +62,7 @@ const components: Record<string, React.ReactNode> = {
             _dark={{ color: 'gray.300' }}
             {...props}
           />
-        </NextLink>
-      </Link>
+        </Link>
     ) : (
       <Heading
         as="h2"
@@ -79,8 +75,7 @@ const components: Record<string, React.ReactNode> = {
     ),
   h3: ({ id, ...props }: HeadingProps) =>
     id ? (
-      <Link href={`#${id}`}>
-        <NextLink href={`#${id}`}>
+        <Link href={`#${id}`}>
           <Heading
             as="h3"
             size="md"
@@ -89,8 +84,7 @@ const components: Record<string, React.ReactNode> = {
             _dark={{ color: 'gray.300' }}
             {...props}
           />
-        </NextLink>
-      </Link>
+        </Link>
     ) : (
       <Heading
         as="h3"
@@ -112,7 +106,8 @@ const components: Record<string, React.ReactNode> = {
   ),
   a: (props: LinkProps) => (
     <NextLink href={props.href ? props.href : ''} passHref prefetch={false}>
-      <Link
+      <Text
+        as="span"
         fontSize="md"
         color="blue.600"
         _dark={{ color: 'gray.300' }}
