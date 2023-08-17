@@ -18,6 +18,7 @@ const BlogMetaData = (props: Props) => {
   const formattedDate = new Date(
     Date.parse(props.datePublished)
   ).toLocaleDateString(locale, {
+    timeZone: "America/New_York",
     weekday: 'long',
     year: 'numeric',
     month: 'long',

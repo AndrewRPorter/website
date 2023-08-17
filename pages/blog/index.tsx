@@ -43,6 +43,7 @@ export default function Blog(props: Props) {
    */
   const formatDate = (date: string): string => {
     return new Date(Date.parse(date)).toLocaleDateString(locale, {
+      timeZone: "America/New_York",
       year: 'numeric',
       month: 'long',
       day: 'numeric'
