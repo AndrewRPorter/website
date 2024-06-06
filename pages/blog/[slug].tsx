@@ -10,6 +10,7 @@ import MDXWrapper from '@/components/mdx-wrapper'
 import BlogMetaData from '@/components/blog/blog_meta_data'
 import rehypeSlug from 'rehype-slug'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types'
+import { Box } from '@chakra-ui/react'
 
 type Props = {
   source: MDXRemoteSerializeResult
@@ -37,7 +38,10 @@ export default function BlogPost(props: Props) {
         markdownContent={props.markdownContent}
         pageTitle={props.frontMatter.title}
       />
-      <MDXWrapper {...props.source} />
+
+      <Box pt={6}>
+        <MDXWrapper {...props.source} />
+      </Box>
     </Layout>
   )
 }

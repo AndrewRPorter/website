@@ -4,12 +4,9 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  Button,
-  Link as ChakraLink,
   IconButton
 } from '@chakra-ui/react'
-import Link from 'next/link'
-import { FaGithub, FaLinkedin, FaRss } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaRss, FaStackOverflow } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -32,8 +29,11 @@ export default function Footer() {
             background="none"
             icon={<FaGithub />}
             size="lg"
-            color={useColorModeValue("gray.600", "white")}
-            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
+            color={useColorModeValue('gray.600', 'white')}
+            _hover={{
+              background: 'none',
+              color: useColorModeValue('blue.600', 'blue.200')
+            }}
           />
           <IconButton
             as="a"
@@ -43,8 +43,25 @@ export default function Footer() {
             background="none"
             icon={<FaLinkedin />}
             size="lg"
-            color={useColorModeValue("gray.600", "white")}
-            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
+            color={useColorModeValue('gray.600', 'white')}
+            _hover={{
+              background: 'none',
+              color: useColorModeValue('blue.600', 'blue.200')
+            }}
+          />
+          <IconButton
+            as="a"
+            href="https://stackoverflow.com/users/8168077/aporter1031"
+            aria-label="Stock Overflow"
+            target="_blank"
+            background="none"
+            icon={<FaStackOverflow />}
+            size="lg"
+            color={useColorModeValue('gray.600', 'white')}
+            _hover={{
+              background: 'none',
+              color: useColorModeValue('blue.600', 'blue.200')
+            }}
           />
           <IconButton
             as="a"
@@ -54,8 +71,11 @@ export default function Footer() {
             background="none"
             icon={<FaRss />}
             size="lg"
-            color={useColorModeValue("gray.600", "white")}
-            _hover={{ background: 'none', color: useColorModeValue('blue.600', 'blue.200') }}
+            color={useColorModeValue('gray.600', 'white')}
+            _hover={{
+              background: 'none',
+              color: useColorModeValue('blue.600', 'blue.200')
+            }}
           />
         </Container>
 
