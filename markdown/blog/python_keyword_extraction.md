@@ -14,8 +14,6 @@ keywords:
 
 Despite these scary words, keyword extraction is fairly simple to perform in Python thanks to the beauty of open-source software.
 
-I also created a tool that does just this but on the web. Give it a try at [https://www.simplecodingtools.com/tool/keyword](https://www.simplecodingtools.com/tool/keyword) 😀
-
 _This post is also available in video form at [https://youtu.be/xdlrQ0-okZc](https://youtu.be/xdlrQ0-okZc)._
 
 ## Background
